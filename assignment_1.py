@@ -9,9 +9,9 @@ print("Hello Python")
     #Que:4 -> Write a python script to print Hello Python on the first line and Python on the second line.
 print("Hello \nPython")
     #Que:5 -> Write a python script to print "MySirG" on the screen.
-print("MySirG")
+print("\"MySirG\"")
     #Que:6 -> Write a python script to print "Teacher's Day" on the screen.
-print("Teacher's Day")
+print("\"Teacher's Day\" ")
     #Que:7 -> Write a python script to print the value of a variable. Variable contains your name as data.
 name='Mahesh'
 print(name)
