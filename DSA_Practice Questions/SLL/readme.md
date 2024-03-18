@@ -2,6 +2,9 @@
 
 - **SLL is a linear data structure.** 
 - **It can grow and shrink.**
+- **Picture Representation of SLL**
+
+![img](./image/Slice2.png)
 
 ### <ins>Basic Operation on SLL :- </ins>
 1. Insertion
@@ -57,6 +60,7 @@ class SLL:
     def __init__(self, start=None):
         self.start = start
     # To make an object of SLLIterator.
+    
     def __iter__(self):
         return SLLIterator(self.start)
 ```
