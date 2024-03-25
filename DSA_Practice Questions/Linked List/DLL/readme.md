@@ -4,7 +4,7 @@
 * It can grow and shrink.
 * Picture Representation Of DLL
 
-![img](image/Slice3.png)
+![img](image/DLL_3.png)
 
 ------------
 ### <ins>Basic Operation on DLL :- </ins>
