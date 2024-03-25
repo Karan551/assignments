@@ -94,7 +94,7 @@ class DLL:
                     temp.next = new_node_object
                 temp = temp.next
             else:
-                # To insert data after last Node If value is match.
+                # To insert data after the last Node If value is match.
                 if temp.next is None and temp.item == search_data:
                     new_node_object.prev = temp.prev.next
                     new_node_object.next = None

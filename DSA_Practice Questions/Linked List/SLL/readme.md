@@ -4,7 +4,7 @@
 - **It can grow and shrink.**
 - **Picture Representation of SLL**
 
-![img](./image/Slice2.png)
+![img](image/Slice2.png)
 
 ### <ins>Basic Operation on SLL :- </ins>
 1. Insertion
