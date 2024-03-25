@@ -49,7 +49,7 @@ class DLL:
             while temp.next is not None:
                 temp = temp.next
             # Last Node reference
-            new_node_object.prev = temp.prev.next
+            new_node_object.prev = temp
             temp.next = new_node_object
         else:
             self.start = new_node_object
@@ -92,11 +92,13 @@ class DLL:
                     new_node_object.prev = temp.next.prev
                     new_node_object.next = temp.next
                     temp.next = new_node_object
+                    temp.next.prev = new_node_object
+                    break
                 temp = temp.next
             else:
                 # To insert data after the last Node If value is match.
-                if temp.next is None and temp.item == search_data:
-                    new_node_object.prev = temp.prev.next
+                if temp.next is None:
+                    new_node_object.prev = temp
                     new_node_object.next = None
                     temp.next = new_node_object
             # Increment the value of counter
@@ -108,7 +110,7 @@ class DLL:
     def delete_first(self):
         if not self.is_empty():
             # If DLL contains only one Node, then do this.
-            if self.start.next is None and self.start.prev is None:
+            if self.start.next is None:
                 self.start = None
             # If DLL contains at least two Node then do this.
             else:
@@ -123,14 +125,14 @@ class DLL:
     def delete_last(self):
         if not self.is_empty():
             # If DLL contains only one Node, then do this.
-            if self.start.prev is None and self.start.next is None:
+            if self.start.next is None:
                 self.start = None
             # If DLL contains at least two Node then do this.
             else:
                 temp = self.start
-                while temp.next.next is not None:
+                while temp.next is not None:
                     temp = temp.next
-                temp.next = None
+                temp.prev.next = None
             # increment the value of counter
             self.count -= 1
         else:
@@ -141,9 +143,8 @@ class DLL:
         if not self.is_empty() and self.search(search_data):
             temp = self.start
             # If DLL contains only one Node, then do this.
-            if temp.prev is None and temp.next is None:
-                if temp.item == search_data:
-                    self.start = None
+            if temp.next is None:
+                self.start = None
             # If DLL contains more than one Node, then do this.
             else:
                 # If DLL contains more than one Node, and we have to
@@ -165,6 +166,25 @@ class DLL:
             self.count -= 1
         else:
             return "DLL is empty or search data not in linked list."
+
+    # This is an optimize method to remove a particular item.
+    def remove_item(self, search_data):
+        if not self.is_empty():
+            temp = self.start
+            while temp is not None:
+                if temp.item == search_data:
+                    if temp.next is not None:
+                        temp.next.prev = temp.prev
+                    if temp.prev is not None:
+                        temp.prev.next = temp.next
+                    else:
+                        self.start = temp.next
+                    # Decrement the value of counter.
+                    self.count -= 1
+                temp = temp.next
+
+        else:
+            return "DLL is empty."
 
     # Que:-12
     def __iter__(self):
@@ -191,12 +211,14 @@ myList.printList()
 # myList.delete_item(60)
 # myList.delete_item(40)
 # myList.delete_item(100)
-myList.insert_after(80, 90)
+# myList.insert_after(80, 90)
+myList.remove_item(80)
 print("After operation")
 myList.printList()
 print()
 # print(f"Search data is {500} :", myList.search(500))
 print("Length of DLL is :", myList.length())
 print("List is empty or not:", myList.is_empty())
+print("For Loop operation: ")
 for item in myList:
     print(item, end=" ")
