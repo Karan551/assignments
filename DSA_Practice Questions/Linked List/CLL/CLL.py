@@ -1,17 +1,43 @@
+class CLLIterator:
+    def __init__(self, current):
+        self.current = current
+        # Get reference the first Node
+        self.first = current
+        self.count = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current is None:
+            raise StopIteration
+        if self.current == self.first and self.count == 1:
+            raise StopIteration
+        else:
+            self.count = 1
+        current_data = self.current.item
+        self.current = self.current.next
+        return current_data
+
+
+# Que:-1
 class Node:
     def __init__(self, item=None, nex_ref=None):
         self.item = item
         self.next = nex_ref
 
 
+# Que:-2
 class CLL:
     def __init__(self, last=None):
         self.last = last
         self.count = 0
 
+    # Que:-3
     def is_empty(self):
         return self.last is None
 
+    # Que:-4
     def insert_at_start(self, data):
         new_node_object = Node(data)
         if not self.is_empty():
@@ -24,6 +50,7 @@ class CLL:
         # Increment the value of counter
         self.count += 1
 
+    # Que:-5
     def insert_at_last(self, data):
         new_node_object = Node(data)
         if not self.is_empty():
@@ -35,6 +62,7 @@ class CLL:
         # Increment the value of counter
         self.count += 1
 
+    # Que:-6
     def search(self, search_data):
         if not self.is_empty():
             temp = self.last.next
@@ -48,6 +76,7 @@ class CLL:
             else:
                 return False
 
+    # Que:-7
     def insert_after(self, search_data, insert_data):
         if not self.is_empty() and self.search(search_data):
             temp = self.last.next
@@ -76,11 +105,10 @@ class CLL:
                     self.last = new_node_object
                 # Increment the value of counter
                 self.count += 1
-
-            pass
         else:
             return "CLL is empty."
 
+    # Que:-8
     def printList(self):
         if not self.is_empty():
             # Get First Node reference
@@ -93,6 +121,7 @@ class CLL:
         else:
             return "CLL is empty."
 
+    # Que:-9
     def delete_start(self):
         if not self.is_empty():
             temp = self.last.next
@@ -106,6 +135,7 @@ class CLL:
         else:
             return "CLL is empty."
 
+    # Que:-10
     def delete_last(self):
         if not self.is_empty():
             temp = self.last.next
@@ -121,6 +151,7 @@ class CLL:
         else:
             return "CLL is empty."
 
+    # Que:-11
     def delete_item(self, search_data):
         if not self.is_empty() and self.search(search_data):
             temp = self.last.next
@@ -142,6 +173,12 @@ class CLL:
         else:
             return "CLL is empty."
 
+    def __iter__(self):
+        if self.last is None:
+            return CLLIterator(self.last)
+        else:
+            return CLLIterator(self.last.next)
+
     def length(self):
         return self.count
 
@@ -149,14 +186,14 @@ class CLL:
 # ------------------Testing Code---------
 myList = CLL()
 print("List is empty or not:", myList.is_empty())
-# myList.insert_at_start(60)
+myList.insert_at_start(60)
 myList.insert_at_start(40)
 myList.insert_at_start(20)
-myList.insert_at_last(60)
+# myList.insert_at_last(60)
 myList.insert_at_last(80)
 myList.printList()
 print("After deletion")
-myList.delete_item(80)
+# myList.delete_item(80)
 # myList.delete_start()
 # myList.delete_last()
 
@@ -167,3 +204,6 @@ myList.printList()
 # print(f"List contains {60} :", myList.search(60))
 print("List is empty or not:", myList.is_empty())
 print("List length is :", myList.length())
+print("print using loop :")
+for item in myList:
+    print(item, end=" ")

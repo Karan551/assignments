@@ -1,6 +1,13 @@
 # SLL (Singly Linked List) :- 
 
-- **SLL is a linear data structure.** 
+- **A `Singly Linked List` is a collection of data called Nodes, where each Node is divided into two parts to store 
+  data 
+  and some address or None.**
+  _The Pointer next points to the address of the next Node in a List._
+- Compared To Array Data Structure, the sized of the Linked List is not fixed.Due to this, There is efficient memory 
+  utilization in a Singly Linked List.
+- **It is a linear data structure.** 
+
 - **It can grow and shrink.**
 - **Picture Representation of SLL**
 
