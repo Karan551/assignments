@@ -1,8 +1,16 @@
 # Circular Doubly Linked List (CDLL): -
+- A Circular Doubly Linked List is a variant of Doubly Linked List Data Structure where the Last Node points to the 
+  First Node, forming a circular structure.**Each Node contains _data_, a pointer to the _next Node_ and a pointer to 
+  the _previous Node_.**
+- It allows us to traversal both directions forward and backward.
+
+
+- **Picture Representation of CDLL: -**
+![img](./images/CDLL_2.jpg)
 
 ---------------
 
-- Basic Practice Problems On CDLL: -
+### Basic Practice Problems On CDLL: -
 
 1. Define a class `Node` to describe a node of a Circular Doubly Linked List.
 2. Define a class CDLL to implement Circular Doubly Linked List with `__init__()` method to create and initialize last

@@ -127,10 +127,9 @@ class CDLL:
     # Que:-10
     def delete_last(self):
         if not self.is_empty():
-            if self.start.prev == self.start or self.start.next == self.start:
+            if self.start.prev == self.start:
                 self.start = None
             else:
-                # print("this is second last node item:", self.start.prev.prev.item)
                 self.start.prev.prev.next = self.start
                 self.start.prev = self.start.prev.prev
             # Decrement the value of counter.
@@ -178,6 +177,7 @@ class CDLL:
         return self.count
 
 
+# Que:- 12
 class CDLLIterator:
     def __init__(self, data):
         self.current = data
