@@ -194,6 +194,6 @@ print("After inserting SLL is:")
 # print("After Deleting one item SLL Is :")
 myList.printList()
 # print("\nList is empty or not :", myList.is_empty())
-print("\nThe length of the SLL is:", myList.length())
+print("\nThe size of the SLL is:", myList.length())
 for data in myList:
     print(data, end=" ")

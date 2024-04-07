@@ -223,4 +223,4 @@ for item in myList:
 print()
 print()
 myList.printList()
-print("CDLL length is :", myList.length())
+print("CDLL size is :", myList.length())

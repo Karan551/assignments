@@ -37,13 +37,13 @@ interest=(p*r*t)/100
 print('Simple Interest is =',interest)
 print('Amount is =',p+interest)
     #Que:9 -> Write a python script to calculate the volume of cuboid.
-a=int(input('Enter the length of the cuboid: '))
+a=int(input('Enter the size of the cuboid: '))
 b=int(input('Enter the width of the cuboid: '))
 c=int(input('Enter the height of the cuboid: '))
 volume=a*b*c
 print('Volume of cuboid is=',volume,sep='')
     #Que:10 -> Write a python script to calculate area of rectangle.
-length=int(input('Enter length of the rectangle:'))
+length=int(input('Enter size of the rectangle:'))
 width=int(input('Enter width of the rectangle:'))
 area=length*width
 perimeter=2*(length+width)

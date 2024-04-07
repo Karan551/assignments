@@ -203,7 +203,7 @@ myList.printList()
 # print()
 # print(f"List contains {60} :", myList.search(60))
 print("List is empty or not:", myList.is_empty())
-print("List length is :", myList.length())
+print("List size is :", myList.length())
 print("print using loop :")
 for item in myList:
     print(item, end=" ")

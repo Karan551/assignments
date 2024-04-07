@@ -27,7 +27,7 @@ tp1 = (1, 1, 1, 1)  # declaring another tuple with all elements are same(equal).
 
 i = 0
 while i < len(tp):
-    if i + 1 == len(tp):  # if counter variable +1 is equal to length of the tuple then below condition will apply.
+    if i + 1 == len(tp):  # if counter variable +1 is equal to size of the tuple then below condition will apply.
         if tp[len(tp) - 1] == tp[len(tp) - 2]:  # compare first last and second last element in the tuple.
             print("Tuple elements are equal.")
     elif tp[i] == tp[i + 1]:  # compare previous element to the next element.
