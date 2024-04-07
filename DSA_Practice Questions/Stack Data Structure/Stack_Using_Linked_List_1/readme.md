@@ -10,3 +10,7 @@
 4.  In Stack class define `pop()` method to remove a top element from the stack.
 5. In Stack class define `peek()` method to return a top element on the stack.
 6.  In Stack class define `size()` method to return the size of the stack that is number of items present in the stack.
+
+> **__Note:__** In Stack we will not insert Node at last we can also add Node at the last Node but If Insert at last 
+> then Stack is less optimize instead of We insert Node at the start because we `insert` Node at the `start`, so we will 
+> `delete` Node also `start` this way we can more optimize our Stack class.
