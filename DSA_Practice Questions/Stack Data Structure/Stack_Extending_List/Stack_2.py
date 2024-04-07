@@ -7,6 +7,7 @@ class Stack(list):
         self.append(data)
 
     def pop(self):
+        # overriding method
         if not self.is_empty():
             return super().pop()
         else:
