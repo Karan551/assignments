@@ -9,12 +9,18 @@ class Stack:
         self.myStack.append(data)
 
     def pop(self):
-        return self.myStack.pop()
+        if not self.is_empty():
+            return self.myStack.pop()
+        else:
+            return IndexError("Stack is empty.")
 
     def peek(self):
-        return self.myStack[-1]
+        if not self.is_empty():
+            return self.myStack[-1]
+        else:
+            return IndexError("Stack is empty.")
 
-    def length(self):
+    def size(self):
         return len(self.myStack)
 
 
@@ -26,6 +32,6 @@ myStack.push(40)
 myStack.push(60)
 myStack.push(80)
 myStack.pop()
-print("Length of the stack:", myStack.length())
+print("Length of the stack:", myStack.size())
 print("Top (last) element of a stack:", myStack.peek())
 print("Stack is empty or not :", myStack.is_empty())
