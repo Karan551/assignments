@@ -16,18 +16,22 @@ class Queue:
     def enqueue(self, data):
         new_node_object = Node(data)
         if not self.is_empty():
-            temp = self.front
-            while temp.next is not None:
-                temp = temp.next
-            temp.next = new_node_object
+            self.rear.next = new_node_object
         else:
             self.front = new_node_object
         self.rear = new_node_object
         self.count += 1
 
     def dequeue(self):
-        self.front = self.front.next
-        self.count -= 1
+        if not self.is_empty():
+            if self.front == self.rear:
+                self.front = None
+                self.rear = None
+            else:
+                self.front = self.front.next
+            self.count -= 1
+        else:
+            raise IndexError("Empty Queue.")
 
     def get_front(self):
         if not self.is_empty():
@@ -54,11 +58,11 @@ print("This is the front element of the Queue:", myQueue.get_front())
 print("This is the rear element of the Queue:", myQueue.get_rear())
 print("Size of the Queue is :", myQueue.size())
 myQueue.dequeue()
-myQueue.dequeue()
-myQueue.dequeue()
-myQueue.dequeue()
+# myQueue.dequeue()
+# myQueue.dequeue()
+# myQueue.dequeue()
 print("---------------")
-# print("This is the front element of the Queue:", myQueue.get_front())
+print("This is the front element of the Queue:", myQueue.get_front())
 print("This is the rear element of the Queue:", myQueue.get_rear())
 print("Size of the Queue is :", myQueue.size())
 print("Queue is empty :", myQueue.is_empty())
