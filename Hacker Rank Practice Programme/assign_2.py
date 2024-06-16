@@ -111,10 +111,42 @@ print()
 #     print(''.join(char))
 
 
-user_input=input()
-if user_input:
-    num_result=eval(user_input)
-    if num_result is not None:
-        print(num_result)
-else:
-    print("This is empty")
+#
+
+# if user_input:
+#     num_result=eval(user_input)
+#     if num_result is not None:
+#         print(num_result)
+# else:
+#     print("This is empty")
+
+# user_input = int(input("Enter a number:"))
+
+# format(15,"x")
+a = "15"
+print(a.rjust(15))
+# a.format()
+number = 17
+binary_number = format(number, 'b')
+
+
+# print("Binary Number Is :", binary_number, "And length is :", len(binary_number))
+# print(type(binary_number))
+
+
+def print_formatted_number(number: int):
+    # width = 5
+    width = len(format(number, "b"))
+    # width = str(width).rjust(width, " ")
+    for num in range(1, number + 1):
+
+        # print("Width is :", width)
+        for base in "doXb":
+            print("{0:{width}{base}}".format(num, base=base, width=width), end=' ')
+        print()
+    pass
+
+
+print_formatted_number(int(input("Enter a number ")))
+# for base in "doXb":
+#     print(base, end=" ")

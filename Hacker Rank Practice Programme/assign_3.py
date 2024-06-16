@@ -1,17 +1,37 @@
 # This file contains the
-from collections import defaultdict, namedtuple, OrderedDict, deque
+from collections import Counter, defaultdict, namedtuple, OrderedDict, deque
 
 
-def defDict():
+def defaultDictProblem():
     lst = ["Python", "Java", "C++"]
-    dct = defaultdict(list)
-    dct['python'].append("awesome")
-    dct['js'].append("fun")
-    dct['something'].append("new")
-    print("This is default dict:\n", dct)
-    for i in dct.items():
-        print(i)
+    # dct = defaultdict(list)
+    # dct['python'].append("awesome")
+    # dct['js'].append("fun")
+    # dct['something'].append("new")
+    # print("This is default dict:\n", dct)
+    # for i in dct.items():
+    #     print(i)
+    dct_a = defaultdict(list)
+    dct_b = defaultdict(list)
+    n, m = input("Enter the value of N | M: ").split()
+    n = int(n)
+    m = int(m)
 
+    groupA = [input('enter group A elements: ') for i in range(n)]
+    # for _ in range(int(n)):
+    #     user_input = input("enter value of Group A: ")
+    #     lst_a.append(user_input)
+
+    print("this is first dict:", groupA)
+
+    # for _ in range(int(m)):
+    #     user_input = input("enter value of Group B: ")
+    #     lst_b.append(user_input)
+    groupB = [input('enter group B elements: ') for i in range(m)]
+    print("this is first dict:", groupB)
+
+
+defaultDictProblem()
 
 Point = namedtuple('Point', 'x,y,z')
 # print(Point.__doc__)
@@ -118,7 +138,7 @@ def dequeMethods():
         print(i, end=' ')
 
 
-dequeMethods()
+# dequeMethods()
 
 
 def dequeProblem():
@@ -144,6 +164,48 @@ def dequeProblem():
 
 
 # dequeProblem()
+
+# total_shoe_amount = 0
+
+
+def counterProblem():
+    total_shoe_amount = 0
+
+    number_of_shoes = int(input("Enter number of shoes: "))
+    available_shoes_size_lst = input("Enter shoes size space separated :").split()
+    count_shoes = Counter(available_shoes_size_lst)
+
+    # if number_of_shoes == len(available_shoes_size_lst):
+
+    total_customers = int(input("Enter number of customers: "))
+    for _ in range(total_customers):
+        shoes_size, price = input("Enter shoe size | price ").split()
+        price = int(price)
+        if shoes_size in count_shoes.keys():
+
+            if count_shoes[shoes_size] > 0:
+                total_shoe_amount += price
+            count_shoes[shoes_size] -= 1
+
+    print("Total price :", total_shoe_amount)
+
+
+# counterProblem()
+
+
+def practiceCounter():
+    myList = [1, 3, 2, 10, 11, 1, 2, 1, 2, 1, 11, 2, 11, 22, 44, 1, 10, 10, 11, 10]
+    result = Counter(myList)
+    print("this is initial result:", result)
+    user_input = int(input("enter number that you want: "))
+
+    if user_input in myList:
+        result[user_input] -= 1
+        pass
+    print('This is final result: ', result)
+
+
+# practiceCounter()
 
 
 # ------------------------
