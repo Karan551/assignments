@@ -3,35 +3,24 @@ from collections import Counter, defaultdict, namedtuple, OrderedDict, deque
 
 
 def defaultDictProblem():
-    lst = ["Python", "Java", "C++"]
-    # dct = defaultdict(list)
-    # dct['python'].append("awesome")
-    # dct['js'].append("fun")
-    # dct['something'].append("new")
-    # print("This is default dict:\n", dct)
-    # for i in dct.items():
-    #     print(i)
-    dct_a = defaultdict(list)
-    dct_b = defaultdict(list)
+    dct = defaultdict(list)
+
     n, m = input("Enter the value of N | M: ").split()
     n = int(n)
     m = int(m)
+    for i in range(n):
+        value = input("Enter a value that you want to store: ")
+        dct[value].append(str(i + 1))
 
-    groupA = [input('enter group A elements: ') for i in range(n)]
-    # for _ in range(int(n)):
-    #     user_input = input("enter value of Group A: ")
-    #     lst_a.append(user_input)
-
-    print("this is first dict:", groupA)
-
-    # for _ in range(int(m)):
-    #     user_input = input("enter value of Group B: ")
-    #     lst_b.append(user_input)
-    groupB = [input('enter group B elements: ') for i in range(m)]
-    print("this is first dict:", groupB)
+    for i in range(m):
+        val = input("Enter a value :")
+        if val in dct.keys():
+            print(" ".join(dct[val]))
+        else:
+            print(-1)
 
 
-defaultDictProblem()
+# defaultDictProblem()
 
 Point = namedtuple('Point', 'x,y,z')
 # print(Point.__doc__)
@@ -229,3 +218,8 @@ def fib(num=5):
 
 def num():
     pass
+
+
+def polynomial():
+    x, k = map(int, input("Enter value of X | K ").split())
+    print(eval(input("Enter Polynomial :")) == k)
