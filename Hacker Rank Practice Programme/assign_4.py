@@ -1,7 +1,6 @@
 import calendar
 
 
-
 def zipBaseProblem():
     number_of_students, subjects = input("Enter number of students | subjects:").split()
     lst_of_marks = []
@@ -45,8 +44,9 @@ def anyOrAllProblem():
 
 
 def calProblem():
+    x = 10
     result = calendar.TextCalendar(1).formatyear(2024)
-    print(result)
+    # print(result)
 
 
 #
@@ -68,5 +68,85 @@ def calProblem():
 # a=calendar.Calendar.monthdays2calendar(2024,2024,6)
 
 a = calendar.HTMLCalendar()
-print(a.formatday(9, 3))
-# print(result)
+
+
+def printMonthCalendar(year: int, month: int):
+    """
+    This function is used to print a month calendar.
+    :param year: Year that you want to print calendar.
+    :param month: Month that you want to print calendar.
+    :return: None
+    """
+    if month > 12 or month <= 0:
+        raise Exception("Sorry Please enter a number from 1 to 12.")
+    monthCalendar = calendar.TextCalendar()
+    monthCalendar.prmonth(year, month)
+
+
+def printYearCalendar(year: int):
+    """
+    This function is used to print a month calendar.
+    :param year: Year that you want to print Calendar.
+    :return:None
+    """
+
+    yearCalendar = calendar.TextCalendar()
+    print(yearCalendar.formatyear(year, c=3))
+
+    # yearCalendar.pryear(year, c=3)
+
+
+def findWeekDay():
+    """
+    This function returns an array of the week.
+    :return: list
+    """
+    return list(calendar.day_name)
+
+
+def abbr_weekDay():
+    return list(calendar.day_abbr)
+
+
+def monthName():
+    """
+    This function is used to find a full month name.
+    :return: list
+    """
+    return list(calendar.month_name)
+
+
+def abbrMonthName():
+    """
+    This function is used to find month abbreviation name.
+    :return: list
+    """
+    return list(calendar.month_abbr)
+
+
+def findDayName(year: int, month: int, day: int):
+    checkTuple = isinstance(year, int), isinstance(month, int), isinstance(day, int)
+    print(checkTuple)
+    if not all(checkTuple):
+        raise Exception("Invalid Input")
+    dayIndex = calendar.weekday(year, month, day)
+    dayLst = findWeekDay()
+    return dayLst[dayIndex]
+
+
+# -----------------Testing Code-------
+
+user_month = int(input("Enter month Name in Number Format :"))
+user_year = int(input("Enter year in number format: "))
+user_day = int(input("Enter Date in number format: "))
+
+print(findWeekDay())
+print(f"{monthName()[user_month]} Current Day is:-", findDayName(user_year, user_month, user_day))
+
+# print(result, type(result))
+# function call
+# printMonthCalendar(user_year, user_month)
+
+# function call
+# printYearCalendar(user_year)
+# print(printYearCalendar.__doc__)

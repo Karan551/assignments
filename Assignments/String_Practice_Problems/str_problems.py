@@ -1,4 +1,5 @@
 import re
+from collections import Counter
 
 
 # Que:-1
@@ -229,4 +230,94 @@ def string_repetition():
         print(char * int(num), end="")
 
 
-string_repetition()
+# string_repetition()
+
+def string_repetition_2():
+    user_input = input("Enter a string: ")
+    output = ""
+    previous_char = None
+    for char in user_input:
+        if char.isalpha():
+            output += char
+            previous_char = char
+        else:
+            output += previous_char * (int(char) - 1)
+    print(output)
+
+
+#  call a function
+# string_repetition_2()
+
+# Que:-11
+def ord_string():
+    # user_input = input("Enter a string: ")
+    user_input = "a4k3b2"
+    output = ""
+    ascii_value = None
+    for char in user_input:
+        if char.isalpha():
+            output += char
+            ascii_value = ord(char)
+        else:
+            output += chr(ascii_value + int(char))
+    print(output)
+
+
+# function call
+# ord_string()
+
+def remove_duplicate_string(user_string: str = None):
+    """
+    This method is used to remove duplicate string from a given string.
+
+    :param: user_string
+    :return: str
+
+    """
+    if user_string:
+        user_input = user_string
+    else:
+        user_input = "ABCDABBCDABBBCCCDDEEEFF"
+    lst = []
+    for char in user_input:
+        if char not in lst:
+            lst.append(char)
+
+    # print("".join(lst))
+    return "".join(lst)
+
+
+# remove_duplicate_string()
+
+
+def find_repeat_string_occurrence():
+    user_input = "ABCABCABBCDE"
+    counter_object = Counter(user_input)
+    # call another function
+    unique_string = remove_duplicate_string(user_input)
+
+    for char in unique_string:
+        print(f'{char}-{counter_object[char]},', end="")
+
+
+# find_repeat_string_occurrence()
+
+
+def reverse_alternate_string(user_string=None):
+    if user_string:
+        user_input = user_string
+    else:
+        # user_input = input("Enter a string ")
+        user_input = "one two three four five six seven"
+    output = ""
+    user_input = user_input.split()
+    for index in range(len(user_input)):
+        if index % 2 != 0:
+            output += user_input[index][::-1] + " "
+        else:
+            output += user_input[index] + " "
+
+    print(output)
+
+
+reverse_alternate_string()
