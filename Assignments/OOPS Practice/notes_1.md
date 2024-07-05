@@ -1,6 +1,6 @@
 # OOPS in Python: -
 
-### What is class: -
+## What is class: -
 
 - In Python, everything is an object. To create an object, we required some Model or BluePrint that is nothing but
   **class.**

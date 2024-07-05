@@ -21,4 +21,55 @@ def plusMinusArr(arr):
 
 
 lst = [-4, 3, -9, 0, 4, 1]
-plusMinusArr(lst)
+
+
+# plusMinusArr(lst)
+
+def minMaxSum(arr):
+    min_lst = arr.copy()
+    min_lst.remove(max(arr))
+    max_lst = arr[::]
+    max_lst.remove(min(arr))
+    print(min_lst)
+    print(max_lst)
+    print(sum(min_lst), sum(max_lst))
+
+
+lst_2 = [3, 2, 1, 3]
+lst_3 = [
+        [11, 2, 4],
+        [4, 5, 6],
+        [10, 8, -12]
+        ]
+
+
+def diagonalCase(arr):
+    left_lst = []
+    right_lst = []
+    left = 0
+    right = 0
+    for i in range(len(arr)):
+        for _ in arr[i]:
+            if arr[left][right] not in left_lst:
+                left_lst.append(arr[left][right])
+
+            if arr[left][right] not in right_lst:
+                right_lst.append(arr[left][right])
+
+
+
+        left += 1
+        right += 1
+    print("THis is left list", left_lst)
+
+
+diagonalCase(lst_3)
+
+
+# minMaxSum(lst_2)
+
+def stairCase(num: int):
+    for i in range(1, num + 1):
+        print(" " * (num - i), "#" * i)
+
+# stairCase(4)
