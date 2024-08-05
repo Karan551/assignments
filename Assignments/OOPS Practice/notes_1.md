@@ -143,3 +143,106 @@ class Student:
 3. **Local Variable (Method Level Variable)**
 
 <h2 align="center"> 1. Instance Variable (Object Level Variable): -</h2>
+
+
+------
+# Encapsulation :-
+
+- **Encapsulation is the idea of hiding the internal details of an object and exposing only the necessary information to the outside world.** 
+- This allows the class to be used in a predictable and consistent manner, even if the underlying implementation 
+  changes. **By using private and protected fields, developers can control the visibility and accessibility of class 
+  attributes and methods, preventing accidental or intentional misuse.**
+
+### Private Attribute In Python Class :-
+
+- **Private attributes are denoted by a double underscore prefix before the attribute name** (e.g. `__private_attribute)
+  `. 
+- **The idea behind private attributes is that they can only be accessed within the class and should not be accessed from outside the class.** However, it is important to note that the **double underscore syntax is just a convention** **and not a strict rule.**
+
+- **When an attribute with a double underscore prefix is referenced from outside the class, the attribute name is 
+  automatically mangled(destroy) to prevent accidental access.**
+
+- For Example:-
+```python
+class Person:
+  def __init__(self, name, age, ):
+    self.name = name
+    # private attribute
+    self.__age = age
+
+  # method to get the value of private attribute
+  def get_age(self):
+    return self.__age
+
+
+# create an object of Person class
+person1 = Person("mahesh", 14)
+print("Person name is :",person1.name)
+
+print("Person age is :",person1.age) ## This will give error
+```
+
+- When trying to access the **private attribute directly from outside the class**, an `AttributeError` **is raised, indicating that the attribute is not accessible.** This protects the **private attribute from being accidentally or intentionally modified from outside the class, maintaining the integrity of the class.**
+
+
+### Protected Attribute in Python class :-
+
+- **Protected attributes in Python are denoted by a single underscore prefix before the attribute name.**
+- Protected attribute is similar to the Private attribute, but they will not be access directly from outside of the 
+  class. **But they will be access in subclasses or child classes.**
+- **Private attribute will not access in subclasses or child class But Protected attribute will be access in child 
+  class or subclass.**
+
+- For example :-
+```python
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        # This is Protected attribute
+        self._age = age
+
+class Employee(Person):
+  # To get value of protected variable.
+    def get_age(self):
+        return  self._age
+```
+
+### Private Methods in class :-
+
+- **Just like private attributes, private methods in Python are denoted by a double underscore prefix before the 
+  method name (e.g. `__private_method`). Private methods are meant to be used only within the class and should not be accessed from outside the class.**
+
+```python
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        # This is Protected attribute
+        self._age = age
+    
+    # This is private method.
+    def __showInfo(self):
+        return f"User name is {self.name} and age is {self._age}"
+
+```
+
+- **Just like private attributes, attempting to access private methods from outside the class results in an** `AttributeError`.
+
+
+### Protected Method is class :-
+
+- **Protected methods in Python are denoted by a single underscore prefix before the method name (e.g. 
+  `_protected_method`). Protected methods are meant to be used within the class and within subclasses, but not from outside the class.**
+
+```python
+class Person:
+    def __init__(self, name, age, contact):
+        self.name = name
+        self.__age = age
+        self._contact = contact
+        
+    # This is protected method.
+    def _getAge(self):
+        return self.__age
+
+```
