@@ -25,7 +25,11 @@ result = addNum(10, 12)
 print("Result is :", result)
 
 ```
-
+- **If function name without parentheses that means only a reference of that function is passed. That function will 
+  not be executed.**
+- **On other hand if function is written with parentheses so it will be called as usual.**
+- **A function name without a parentheses is a reference to the function , while a function name with trailing 
+  parentheses calls the function and refers to its return values.**
 -----
 
 ## Python’s Functions Are First-Class :-
