@@ -147,9 +147,9 @@ Python &emsp; 3.13 &emsp; 7 October 2024
 - Data is any piece of information which is used by the programme to accomplish(complete) a task.
 - **e.g. :-** 👇
 
-  1. Find sum of two numbers.
-  2. check whether a given number is even or odd.
-  3. Find LCM of two numbers.
+    1. Find sum of two numbers.
+    2. check whether a given number is even or odd.
+    3. Find LCM of two numbers.
 
 - All the above tasks can be done only using some data.
 
@@ -198,3 +198,105 @@ print(*objects, sep=' ', end='\n', file=None, flush=False)
     - **`.py` file is known as Module.**
 - **Package :-** 👉 &nbsp; **Package is a collection of module and sub-packages.**
 - **Library :-** 👉 &nbsp; **Library is a collection of packages.**
+
+-----
+
+### 🌟 `import` :-
+
+  ```text
+  import moduleName
+  
+  moduleName.moduleElement
+  ```
+
+- **Module element can be :- 👇**
+    - `variable`
+    - `function`
+    - `class`
+- If we want to import specific object form any module then we will write
+  ```python
+  from A2 import  x
+  ```
+- Where :-
+    - A2 👉 **Module Name**
+    - x 👉  **module element**
+
+### 🌟 Keywords :-
+
+- Predefined words
+- Reserved words
+- There are 35 keywords in `Python` .
+
+|        |          |           |        |
+|:------:|:--------:|:---------:|:------:|
+| False  |  class   |   from    |   or   |
+|  True  | continue |  global   |  pass  |
+|  None  |   def    |    if     | raise  |
+|  and   |   del    |  import   | return |
+|   as   |   elif   |    in     |  try   |
+| assert |   else   |    is     | while  |
+| async  |  except  |  lambda   |  with  |
+| await  | finally  | non local | yield  |
+| break  |   for    |    not    |        |
+
+### 🌟 Type conversion functions :-
+
+1. `int()`
+2. `float()`
+3. `complex()`
+4. `bool()`
+5. `str()`
+
+### 🌟 Number System :-
+
+1. **Binary Number System :-** 👉 **&nbsp;0 , 1**
+2. **Octal Number System :-** 👉 **&nbsp;0 , 1, 2, 3, 4, 5, 6, 7**
+3. **Decimal Number System :-** 👉 **&nbsp;0 , 1, 2, 3, 4, 5, 6, 7, 8, 9,**
+4. **Hexa Decimal Number System :-** 👉 **&nbsp;0 , 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F**
+
+### 🌟 Number Conversion :-
+
+```python
+x = 25
+bin(x)
+# <<<< '0b11001'
+oct(x)
+# <<<< '0o31'
+hex(x)
+# <<<< '0x19'
+
+#  x = 0b11001 (in binary)
+#  x = 0o31    (in octal)
+#  x = 0x19    (in hexadecimal)
+```
+
+### 🌟 Unicode :-
+
+- **The Unicode is character encoding and its goal is to replace like existing character sets with its standard UTF.**
+
+    - UTF 👉 **&nbsp; Unicode Transformation Format**
+    - UTF-8 👉 **&nbsp; It is the most commonly used character encoding. It is also backward compatible with ASCII.**
+
+### 🌟 Character To Unicode :-
+
+```python
+x = "A"
+ord(x)
+# <<<< 65
+```
+
+### 🌟 Unicode To Character  :-
+
+```python
+x = 65
+chr(x)
+# <<<< 'A'
+```
+
+### 🌟 Taking input from the User `input()`:-
+
+- `input()` can take at most one argument of `str` type.
+- `input()` always return `str` type value.
+
+-----
+### 🌟 Operators :-
