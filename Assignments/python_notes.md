@@ -299,4 +299,234 @@ chr(x)
 - `input()` always return `str` type value.
 
 -----
+
 ### 🌟 Operators :-
+
+----- 
+
+## 🌟🌟 List :-
+
+- **`list` is a class.**
+- **`list` is an iterable sequence.**
+- **`list` is growable.**
+- **`list` can store heterogeneous data.**
+- **`list` elements are indexed.**
+- ***List* is one fo the most commonly used sequences, and it is a most flexible type basically a list can contain any
+  type (string, float, integer etc.) and number of items. It can hold one data type or a combination of several data
+  types .**
+- **A List is mutable(changeable) hence you can add, delete modify elements. We can build a list by assigning to it
+  using the following syntax :-**
+- **Syntax :-** 👇
+  ```text
+  lst_items = [ item1, item2, item3,.......]
+  ```
+
+**Example :-** 👇
+
+```python
+lst = [0, 5, 10, "Hello", "Python"]
+```
+
+### How to create list object :-
+
+```python
+# Square brackets are used to denote a list.
+l1 = [10, 20, 30]
+
+# Empty list object
+l2 = []
+
+# Heterogeneous elements
+l3 = [50, 35, "abc", "Python", "JavaScript"]
+```
+
+### 🌟 How to access list elements :-
+
+```python
+l1 = [50, 20, 80, 30, 60, 40]
+print(l1)
+# <<< [50, 20, 80, 30, 60, 40]
+
+print(l1[0])
+# <<< 50
+
+print(l1[1], l1[2])
+# <<< 20 80
+
+# Create a list of first 4 numbers
+num_list = list(range(4))
+print(num_list)
+# <<< [0, 1, 2, 3]
+```
+
+- I have to insert Here image of list indexing
+
+#### 🌟 Indexing :-
+
+- **Just like strings we can access items on a list with the `index operator[]`.**
+- **Always use an integer when indexing to avoid `TypeError`. Attempting to access a list element that is beyond the
+  index range will result to and `IndexError.`**
+
+##### 🌟 **Nested Indexing :-**
+
+  ```python
+lst_elements = [5, 6, 10, 15, "code", [1, 3, 5, 7, 9]]
+print(lst_elements[5][1])
+# <<< 3
+print(lst_elements[4][0])
+# <<< c
+   ```
+
+###### 🌟 **Negative Indexing :-**
+
+- The last item on the list takes the -1 index the second to the last has the -2 index and so on.
+
+```python
+num_lst = [10, 20, 30, 40, 50, 60, 70, 80]
+print(num_lst[-1])  # same as it is ---> print(num_lst[len(num_lst)-1]) 
+# <<< 80
+print(num_lst[-2])  # same as it is ---> print(num_lst[len(num_lst)-2]) 
+# <<< 70
+```
+
+##### 🌟 **Slicing of List :-**
+
+- The slicing operator the `colon(:)` is used to access a range of elements on lists.
+
+- **Example :-** 👇
+
+```python
+char_list = ["H", "e", "l", "l", "o", "W", "o", "r", "l", "d"]
+print(char_list[0:5])
+# ["H","e","l","l","o"]
+```
+
+#### 🌟 Accessing list elements via `for` loop :-
+
+```python
+num_lst = [10, 20, 30, 40, 50, 60, 70, 80]
+
+for num in num_lst:
+    print(num, end=" ")
+```
+
+##### 🌟 Accessing list elements via `while` loop :-
+
+```python
+num_lst = [10, 20, 30, 40, 50, 60, 70, 80]
+
+i = 0
+while i < len(num_lst):
+    print(num_lst[i], end="")
+    i += 1
+```
+
+##### 🌟 How to delete an element from the list:-
+
+```python
+num_lst = [10, 20, 30, 40, 50, 60, 70, 80]
+del num_lst[4]
+```
+
+##### 🌟 How to edit an element of the list:-
+
+```python
+num_lst = [10, 20, 30, 40, 50, 60, 70, 80]
+num_lst[4] = 100
+
+# <<< [10, 20, 30, 40, 100, 60, 70, 80]
+```
+
+#### How to add more elements in the list :-
+
+```python
+num_lst = [10, 20, 30, 40, 50]
+num_lst[6] = 60  # Index error
+
+# not adding more values in the list but only updating values at index 3 & 1
+num_lst[3] = 800
+num_lst[1] = 600
+```
+
+- There are the following methods to add elements in the list:-
+
+1. `append()`
+2. `extend()`
+3. `insert()`
+
+- `class` is a group of variables and functions. These variables and functions are called attributes.
+##### 🌟 Syntax :- 👇
+```text
+listObject.append(value)
+
+listObject.extend(iterable)
+
+listObject.insert(index,value)
+```
+
+- `append()` method adds value at the end of the list that is new element will become the last element of the list.
+- `extend()` method extends the list by appending all the items from the iterable.
+  - `extend()` method takes exactly one argument(maximum) and that argument should be iterable.
+  - `extend()` method append(add) only iterable value not iterable type.
+- `insert(index,value)` method insert an item at a given position.
+    - if `index > last_index` then value will store at `last_index +1` means value will be appended.
+
+#### 🌟 Example :- 👇
+
+```python
+num_lst = [10, 20, 30]
+
+num_lst.append(40)
+print(num_lst)
+# <<< [10,20,30,40]
+
+num_lst.insert(1, 200)
+print(num_lst)
+# <<< [10,200,30,40]
+
+# if index > last_index then 
+num_lst.insert(10, 10000)
+print(num_lst)
+# <<< [10,20,30,40,1000]
+
+num_lst.extend([60, 70, 80, 90])
+print(num_lst)
+# <<<< [10,20,30,40,1000,60,70,80,90]
+
+lst=[1,3,5]
+lst.extend(range(6))
+
+# this will give error because extend takes exactly one argument here two is given
+# lst.extend([1,2,4,5],[7,8,9])  
+```
+
+#### 🌟 Packing And Unpacking :-
+```python
+a, b, c = 10, 20, 30
+lst = [a, b, c]  # packing
+
+num_lst = [40, 50, 60]
+a, b, c = num_lst  # unpacking
+```
+- 🌟🌟 **When we unpack of any sequence then, number of variables on the left hand side must be same as the number of elements in the list.**
+- 🌟🌟 **If we don't know how many elements are there in the `list/tuple/set` then we will have to assign at least one variable and after this variable we will have to use asterisk sign and name of  the variable.**
+
+```python
+lst = [10, 20, 30, 40, 50, 60, 70]
+a, *b = lst
+
+print(a)
+# <<< 10
+print(b)     # type of b is list 
+# <<< [20,30,40,50,60,70]
+```
+
+### 🌟  Built-in methods :-
+1. `len()` 👉 Returns length of specified iterable. 
+2. `min()` 👉 Returns minimum value element. 
+3. `max()` 👉 Returns maximum value element.
+4. `sum()` 👉 Returns sum of elements.
+5. `sorted()` 👉 Returns sorted new list of elements (it's not change original list).
+
+
+#### 🌟 `list()` method :-
