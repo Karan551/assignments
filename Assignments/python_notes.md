@@ -455,7 +455,9 @@ num_lst[1] = 600
 3. `insert()`
 
 - `class` is a group of variables and functions. These variables and functions are called attributes.
+
 ##### 🌟 Syntax :- 👇
+
 ```text
 listObject.append(value)
 
@@ -466,8 +468,8 @@ listObject.insert(index,value)
 
 - `append()` method adds value at the end of the list that is new element will become the last element of the list.
 - `extend()` method extends the list by appending all the items from the iterable.
-  - `extend()` method takes exactly one argument(maximum) and that argument should be iterable.
-  - `extend()` method append(add) only iterable value not iterable type.
+    - `extend()` method takes exactly one argument(maximum) and that argument should be iterable.
+    - `extend()` method append(add) only iterable value not iterable type.
 - `insert(index,value)` method insert an item at a given position.
     - if `index > last_index` then value will store at `last_index +1` means value will be appended.
 
@@ -493,7 +495,7 @@ num_lst.extend([60, 70, 80, 90])
 print(num_lst)
 # <<<< [10,20,30,40,1000,60,70,80,90]
 
-lst=[1,3,5]
+lst = [1, 3, 5]
 lst.extend(range(6))
 
 # this will give error because extend takes exactly one argument here two is given
@@ -501,6 +503,7 @@ lst.extend(range(6))
 ```
 
 #### 🌟 Packing And Unpacking :-
+
 ```python
 a, b, c = 10, 20, 30
 lst = [a, b, c]  # packing
@@ -508,8 +511,11 @@ lst = [a, b, c]  # packing
 num_lst = [40, 50, 60]
 a, b, c = num_lst  # unpacking
 ```
-- 🌟🌟 **When we unpack of any sequence then, number of variables on the left hand side must be same as the number of elements in the list.**
-- 🌟🌟 **If we don't know how many elements are there in the `list/tuple/set` then we will have to assign at least one variable and after this variable we will have to use asterisk sign and name of  the variable.**
+
+- 🌟🌟 **When we unpack of any sequence then, number of variables on the left hand side must be same as the number of
+  elements in the list.**
+- 🌟🌟 **If we don't know how many elements are there in the `list/tuple/set` then we will have to assign at least one
+  variable and after this variable we will have to use asterisk sign and name of the variable.**
 
 ```python
 lst = [10, 20, 30, 40, 50, 60, 70]
@@ -517,16 +523,237 @@ a, *b = lst
 
 print(a)
 # <<< 10
-print(b)     # type of b is list 
+print(b)  # type of b is list 
 # <<< [20,30,40,50,60,70]
 ```
 
-### 🌟  Built-in methods :-
-1. `len()` 👉 Returns length of specified iterable. 
-2. `min()` 👉 Returns minimum value element. 
+### 🌟 Built-in methods :-
+
+1. `len()` 👉 Returns length of specified iterable.
+2. `min()` 👉 Returns minimum value element.
 3. `max()` 👉 Returns maximum value element.
 4. `sum()` 👉 Returns sum of elements.
 5. `sorted()` 👉 Returns sorted new list of elements (it's not change original list).
 
-
 #### 🌟 `list()` method :-
+
+- `list()` method takes at most(maximum) one argument that argument should be iterable.
+
+```python
+# create an empty list object.
+lst = list()
+
+# this will gives error because int object is not iterable.
+# lst1=list(10)  
+
+# this will gives error because list() method takes maximum one argument here 3 is given.
+# lst2=list(10,20,30)
+
+lst3 = list("Captain America")
+# <<< ['C', 'a', 'p', 't', 'a', 'i', 'n', ' ', 'A', 'm', 'e', 'r', 'i', 'c', 'a']
+
+lst4 = list(range(5))
+# <<< [0, 1, 2, 3, 4]
+
+lst5 = list([10, 20])
+# <<< [10,20]
+```
+
+#### 🌟 Comparison Operator on `list` :-
+
+```python
+l1 = [1, 2, 3]
+l2 = [2, 3, 1]
+l3 = [1, 2, 3, 4, 5]
+l4 = [1, 2, 3]
+```
+
+- If we compare two `list` then give the following results :-
+- `l1 == l2` 👉 `False`
+- `l1 == l3` 👉 `False`
+- `l1 == l4` 👉 `True`
+- `l1 > l4`  👉 `True`
+
+#### 🌟 Concatenation Operator :-
+
+```python
+lst1 = [1, 5, 9]
+lst2 = [2, 3, 1]
+
+result = lst1 + lst2
+
+print(result)
+# <<< [1, 5, 9, 2, 3, 1]
+```
+
+#### 🌟 Repetition Operator :-
+
+```python
+l1 = [2, 5]
+print(l1 * 5)
+# <<< [2, 5, 2, 5, 2, 5]
+```
+
+#### 🌟 list of lists :-
+
+```python
+lst = [[1, 3, 5], [2, 1, 8], [5, 4, 4]]
+```
+
+#### 🌟 `list` object methods :-
+
+<p align="center"> 🌟 <strong>Adding elements to a list :-</strong></p>
+
+1. `append()` :- 👉 &nbsp; **It is used to add a single item at the end of the original list. It works with element data
+   type not a value. It is change the original `list` object.**
+    ```text
+    list_object.append(object)
+    ```
+2. `extend()` :- 👉 &nbsp; **It is used to add two or more items at the end of the original list. It works only on
+   element value not data type.**
+    ```text
+    list_object.extend(iterable)
+    ```
+3. `insert()` :- This method is used to insert an item on your desired location.
+    ```text
+    list_object.insert(index_number, value)
+    ```
+
+- **Example :-** 👇
+
+```python
+even_number = [2, 4, 6, 8]
+even_number.append(10)
+print(even_number)
+# <<< [2, 4, 6, 8, 10]
+
+num_list = [10, 20, 30, 40]
+num_list.extend([101, 501, 511])
+print(num_list)
+# <<< [10, 20, 30, 40, 101, 501, 511]
+
+odd_number = [1, 3, 5, 7, 9]
+odd_number.insert(2, 55)
+print(odd_number)
+# <<< [1, 3, 55, 7, 9]
+```
+
+<p align="center"> 🌟 <strong>Removing or Deleting elements from a list :-</strong></p>
+
+- There are four methods to remove items from the list :-
+
+1. **`remove()` :-** 👉 **&nbsp; To remove an item from a list we can use remove method. It does not return anything.**
+    ```text
+    list_object.remove(value)
+    ```
+
+2. `pop()` :- 👉 **&nbsp; It is used to remove the item associated with the given index. If the index is not given By
+   default It removes last element and returns that element. It is returned that value that is removed from the `list`.
+   **
+    ```text
+    list_object.pop(index_value)
+    ```
+3. `clear()` :- **It is used to create an empty `list`.**
+    ```text
+    list_object.clear()
+    ```
+4. `del` **keyword :-** 👉 &nbsp; It is used to delete one or more items or event the entire list.
+    - **To delete one item from the list is , Syntax is :-** <br />
+      👉 &nbsp; `del list_object[index_value]`
+    - **To delete range of item from the list is , Syntax is :-** <br />
+      👉 &nbsp; `del list_object[:]`
+    - **We can delete the entire items from the list by the replacing the entire range of items with an empty space.**
+        - **Example :-** 👇
+
+```python
+numbers_list = [1, 2, 3, 4, 5, 6, 7]
+numbers_list[:] = []
+print(numbers_list)
+# <<< []
+``` 
+
+#### 🌟 Example :-
+
+```python
+numbers_list = [1, 2, 3, 4, 5, 6, "Hello", 7]
+numbers_list.remove("Hello")
+print(numbers_list)
+# <<< [1, 2, 3, 4, 5, 6, 7]
+
+color_list = ["red", "yellow", "blue", "green", "pink", "brown", "white"]
+
+# It removes the third index element from the list.
+color_list.pop(3)
+
+# It removes last item (By default).
+color_list.pop()
+
+color_list.clear()
+print(color_list)
+# <<< []
+```
+
+#### 🌟 Sorting Items on a `list` :-
+
+- `sort()` **:-** 👉 &nbsp; **This method is used to sort items of similar data type with in the list. It sorts the items
+  in ascending order (By default). It changes original `list`.**
+- **Example :-** 👇
+
+```python
+number_list = [15, 13, 12, 16, 11, 14]
+number_list.sort()
+print(number_list)
+# <<< [11, 12, 13, 14, 15, 16]
+```
+
+#### 🌟 Reverse method :-
+
+- **This method is used to arrange items in the reverse or descending order. It changes original `list` also.**
+- **Syntax :-** 👇
+
+```text
+list_object.sort(key=None, reverse=False)
+```
+
+- **Example :-** 👇
+
+```python
+number_list = [15, 13, 12, 16, 11, 14]
+# sort in ascending order (By default)
+number_list.reverse()
+print(number_list)
+# <<< [16, 15, 14, 13, 12, 11]
+
+# sort in descending order
+number_list.sort(reverse=True)
+```
+
+#### 🌟 `count()` method :-
+
+- The `count()` method counts how many times an object occurs in a list.
+    ```text
+    list_object.count(object)
+    ```
+
+#### 🌟 `index()` method :-
+
+- `index()` method returns of first occurrence of specifies element.
+
+- `copy()` method Return a shallow copy of the list.
+
+#### 🌟 Testing For Membership in the `list` :-
+
+- **Membership operators are used to test if an object is stored in a list. It returns True Oor False after evaluating
+  the
+  expression.**
+
+```python
+numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(9 in numbers_list)
+# <<< True
+
+print(15 not in numbers_list)
+## True
+```
+
+### 🌟 `list` Comprehension :-
