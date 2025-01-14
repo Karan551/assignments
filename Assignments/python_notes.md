@@ -739,7 +739,10 @@ number_list.sort(reverse=True)
 
 - `index()` method returns of first occurrence of specifies element.
 
-- `copy()` method Return a shallow copy of the list.
+### 🌟 Some other important method of list :-
+
+1. `copy()` :- 👉 &nbsp; **This method returns a shallow copy of the list.**
+2.
 
 #### 🌟 Testing For Membership in the `list` :-
 
@@ -757,3 +760,312 @@ print(15 not in numbers_list)
 ```
 
 ### 🌟 `list` Comprehension :-
+
+- **`list` comprehension is a concise way of creating new list from an existing list. It consists of a expression and a
+  `for` loop enclose in square brackets.**
+
+**Syntax :-** 👇
+
+```text
+[expression for variable in iterable ]
+```
+
+```python
+# Creating a list of 100 numbers using list comprehension :-
+number_list = [number for number in range(1, 101)]
+
+# for even number using filter
+even_number_list = [number for number in range(1, 101) if number % 2 == 0]
+
+# without list comprehension
+
+lst = []
+for num in range(1, 101):
+    lst.append(num)
+```
+
+#### 🌟 `sorted(iterable, key=function_name, reverse=False)` :-
+
+- **Returns a new list containing all items from the iterable in ascending order.**
+- **A custom key function can be supplied to customize sort order.**
+- **By default, it sorted in ascending order if we want to sort in descending order then we will have to
+  set `reverse = True`**
+- **By default `reverse = False`.**
+
+-----
+
+### 🌟 Mutability and Hashability :-
+
+- **Mutable objects are changeable.**
+- **immutable objects are not changeable.**
+- **All immutable objects are hashable but not all hashable objects are immutable.**
+- **Hashable is a feature of Python objects that tells if the object has a hash value or not if it has a hash value that
+  does not change during its entire lifetime.**
+
+| Data Type | Hashable | Mutable |
+|:---------:|:--------:|:-------:|
+|   `int`   |   Yes    |   No    |
+|  `float`  |   Yes    |   No    |
+| `complex` |   Yes    |   No    |
+|  `bool`   |   Yes    |   No    |
+|   `str`   |   Yes    |   No    |
+|   `str`   |   Yes    |   No    |
+|  `range`  |   Yes    |   No    |
+|  `list`   |    No    |   Yes   |
+|  `tuple`  |   Yes    |   No    |
+|   `set`   |    No    |   Yes   |
+|  `dict`   |    No    |   Yes   |
+
+-----
+
+<h2 align="center">Tuple</h2>
+
+- `tuple` is a class.
+- `tuple` is iterable.
+- `tuple` is immutable.
+- `tuple` is hashable.
+- `tuple` is a sequence.
+- A `tuple` is a sequence data type that contains ordered collectoin of objects. It is a immutable data type so once you
+  have created we can not delete and update its elements.
+- It is faster than list because we can delete or update its elements.
+
+### 🌟 How To Create `tuple` object :-
+
+- **To create a `tuple` we can place the elements with in parentheses and separate them with a comma.**
+- We cannot create a tuple ony one element if we do this then we have to place a comma after the element.
+
+```python
+t1 = (10, 20, 30, 40)
+t2 = ()  # empty value
+# t3 = (10)  # It is not a tuple.
+t4 = (10,)  # It is a tuple.
+```
+
+#### 🌟 Accessing `tuple` elements :-
+
+##### Indexing :-
+
+- The index operator indicates the index of the element that you want to access.
+
+##### Slicing :-
+
+- **If we want to access several items at the same time then we will have to use the slicing operator.**
+
+- **We can access tuple elements using loop(while or for).**
+
+- **Example :-** 👇
+
+```python
+tp = (10, 20, 30, 40, 50, 60)
+
+# via indexing access tuple elements :-
+print(tp[2])
+# <<< 30
+
+# via slicing access tuple elements 
+print(tp[3:5])
+# << (40, 50)
+
+# ----------------------- using  while loop
+
+count = 0
+while count < len(tp):
+    print(tp[count], end="")
+    count += 1
+
+# ----------------------- using  for loop
+for item in tp:
+    print(item, end="")
+```
+
+#### Concatenation and Repetition Operator :-
+
+```python
+tp1 = (10, 20, 30, 40, 50, 60)
+tp2 = (11, 21, 31, 41)
+
+print(tp1 + tp2)
+# <<< (10, 20, 30, 40, 50, 60, 11, 21, 31, 41)
+
+print(tp2 + tp1)
+# <<< (11, 21, 31, 41, 10, 20, 30, 40, 50, 60)
+
+print(tp2 * 3)
+# <<< (11, 21, 31, 41, 11, 21, 31, 41, 11, 21, 31, 41)
+```
+
+#### Comparison Operator :-
+
+```python
+tp1 = (10, 20, 30, 40, 50, 60)
+tp2 = (11, 21, 31, 41)
+
+print(tp1 > tp2)
+# False
+
+print(tp2 < tp1)
+# True
+
+print(tp1 == tp2)
+## <<< False
+```
+
+#### 🌟 Changing Reassigning and Deleting `tuple` elements :-
+
+- **A `tuple` is immutable(unchangeable) data type so we cannot alter its elements.**
+- **To reassign a `tuple` we an just list a different set of elements and assigning it to the `tuple`.**
+
+- To delete a tuple and all the items you will use the keyword `del`.
+- **Syntax :-** 👉   `del tuple_name`
+
+### `tuple` object methods :-
+
+- Only two python methods works with tuples.
+    1. `count()`:- 👉 **&nbsp; It returns the number of elements which is equal to the given elements.**
+        - **Syntax :-** 👉 `tuple_object.count(element)`
+    2. `index()` :- 👉 **&nbsp; It returns the index of the first element which is equal to the given element.**
+        - **Syntax :-** 👉 `tuple_object.index(element)`
+
+```python
+tp1 = (10, 20, 30, 10, 50, 20, 10, 20, 10, 20, 10)
+print(tp1.count(20))
+# <<< 4
+print(tp1.index(30))
+# <<< 2
+```
+
+### 🌟 User input :-
+
+```python
+user_input = input("enter numbers comma separated : ")
+
+user_tuple = [number for number in user_input.split(",")]
+
+# other way to create a tuple 
+t2 = tuple()
+
+t3 = tuple([10, 20, 30, 50, 40, 60, 90, 80, 70])
+# <<< (10, 20, 30, 50, 40, 60, 90, 80, 70)
+
+t4 = tuple(range(5))
+# <<< (0, 1, 2, 3, 4)
+```
+
+### 🌟 built-in-methods :-
+
+1. `len()`
+2. `min()`
+3. `max()`
+4. `sum()`
+5. `sorted()`
+
+<h2 align="center"> 🌟 Set :- </h2>
+
+- `set` is class.
+- `set` is mutable.
+- `set` is not hashable.
+- `set` is not a sequence.
+- `set` can not have duplicate values.
+- `set` does not guarantee to store values in the order of insertion.
+- Indexing is not applicable to set object.
+- Slicing operator is not applicable.
+- **A `set` is an ordered group of unique elements. Although a set itself is mutable its elements must be immutable.**
+- A `set` is a collection unordered and unindexed that is iterable mutable and has no duplicate elements.
+
+### 🌟 How to create a `set` object :-
+
+- **We can create a `set` by enclosing all elements in curly braces or by using `set()` constructor.**
+- **A `set` can hold items of different data type such as float, tuple string or integer.**
+- **It cannot hold a mutable element such as a `dictionary`, `list` or `set`.**
+- A comma is used to separate items from each other.
+
+```python
+s1 = {1, 5, 8}
+s2 = {10, 2, 5, 14, 2, 8, 2, 8}
+
+s3 = {}  # not a set object.
+
+# To create a empty set object.
+s4 = set()
+
+```
+
+- **To create an empty `set` we will have to use the `set()` function without an argument. We cannot use empty curly
+  braces
+  as this is the syntax for creating an empty dictionary.**
+
+### 🌟 Accessing `set` elements :-
+
+```python
+# via for loop 
+
+for e in setObject:
+    print(e, end="")
+```
+
+#### 🌟 Concatenation and Repetition Operator :-
+
+```text
+# Concatenation operator
+set + set ---> not supported    
+
+# Repetition operator
+set * int ---> not supported
+```
+#### 🌟 Comparison Operator :-
+```text
+s1 > s2
+s1 < s2
+
+s1 >= s2
+s1 <= s2
+s1 == s2
+s1 != s2
+```
+- **Tow set objects are equal if their element are same doesn't matter the order of elements.**
+
+#### 🌟 Changing elements in a `set` :-
+- **Sets are mutable so we can change their elements. Because sets are unordered you cannot access or change an item or items through indexing or slicing.**
+
+1. `add()` :- **This method is used to append a single element to a `set`.**
+2. `update()` :- **This method is used to add multiple elements to a set. Strings, lists tuples or other set can be used as argument when we use `update()` method.**
+   - **This method only element value not a data type.**
+
+```python
+my_set = {2, 4, 6, 8, 10}
+my_set.add(12)
+print(my_set)
+# <<< {2, 4, 6, 8, 10, 12}
+
+my_set.update([7, 9, 11, 13])
+print(my_set)
+# <<< {2, 4, 6, 7, 8, 9, 10, 11, 12, 13}
+```
+
+### 🌟 Removing `set` elements :-
+- There are two methods to remove a specific item from a set.
+1. `remove()` **:-** 👉 **&nbsp; This method is used to remove an item to a set. It `raise error` when the given argument does not exist.**
+2. `discard()` **:-** 👉 **&nbsp; It is used to remove an item from a set. It does not raise error when the given argument does not exist. It simply remains unchanged to set.**
+3. `pop()` **:-** 👉 **&nbsp;This method is used to remove and return and item on a set. Because set it unordered so we cannot possibly control which item will be popped.**
+4. `clear()` **:-** 👉 **&nbsp;This method is used to remove all elements on a set.**
+
+```python
+# remove() method
+my_set = {"a", "b", "c", "d", "e"}
+my_set.remove("d")
+print(my_set)
+# <<< {'c', 'e', 'b', 'a'}
+
+# discard() method 
+my_set.discard("d")
+{'c', 'b', 'a'}
+print(my_set)
+
+# pop() method
+my_set.pop()
+print(my_set)
+
+# clear() method
+my_set.clear()
+print(my_set)
+```
