@@ -1,4 +1,19 @@
-# Python :-
+<h1 align="center">Index</h1>
+<ol>
+    <li><a href="#python-intro">Python</a></li>
+    <li><a href="#use-of-python">Use Of Python</a></li>
+    <li><a href="#feature">Feature of Python</a></li>
+    <li><a href="#python-intro">Data Type</a></li>
+    <li><a href="#keywords">Keywords</a></li>
+    <li><a href="#list">List</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#set">Set</a></li>
+    <li><a href="#dict">Dictionary</a></li>
+</ol>
+
+--------
+
+# Python <span id="python-intro"></span> :-
 
 - Python is a high level general purpose programming language. It's design philosophy emphasizes code readability with
   the use of significant indentation.
@@ -30,7 +45,7 @@ Python &emsp; 3.13 &emsp; 7 October 2024
 - Python developers aim for it to be fun to use.
 - The Name **Python** is a tribute to the **British Comedy Group Monty Python.**
 
-### Features Of Python :-
+### Features Of Python <span id="feature"></span> :-
 
 1. Simple And Straight Forward Language
 2. Case Sensitive
@@ -50,7 +65,7 @@ Python &emsp; 3.13 &emsp; 7 October 2024
 - Large organizations that uses Python are **Google, NASA, Facebook, Amazon, Instagram, Spotify, Microsoft, CERN,
   YouTube, Netflix, Dropbox** etc.
 
-### Variety of Use :-
+### Variety of Use <span id="use-of-python"></span>:-
 
 - Python can serve as a scripting language for web applications.
 - Web Frameworks - Django, Flask etc.
@@ -221,7 +236,7 @@ print(*objects, sep=' ', end='\n', file=None, flush=False)
     - A2 👉 **Module Name**
     - x 👉  **module element**
 
-### 🌟 Keywords :-
+### 🌟 Keywords <span id="keywords"></span> :-
 
 - Predefined words
 - Reserved words
@@ -304,7 +319,7 @@ chr(x)
 
 ----- 
 
-## 🌟🌟 List :-
+## 🌟🌟 List <span id="list"></span> :-
 
 - **`list` is a class.**
 - **`list` is an iterable sequence.**
@@ -818,7 +833,7 @@ for num in range(1, 101):
 
 -----
 
-<h2 align="center">Tuple</h2>
+<h2 align="center" id="tuple">🌟🌟 Tuple</h2>
 
 - `tuple` is a class.
 - `tuple` is iterable.
@@ -959,7 +974,7 @@ t4 = tuple(range(5))
 4. `sum()`
 5. `sorted()`
 
-<h2 align="center"> 🌟 Set :- </h2>
+<h2 align="center" id="set"> 🌟 Set :- </h2>
 
 - `set` is class.
 - `set` is mutable.
@@ -1012,7 +1027,9 @@ set + set ---> not supported
 # Repetition operator
 set * int ---> not supported
 ```
+
 #### 🌟 Comparison Operator :-
+
 ```text
 s1 > s2
 s1 < s2
@@ -1022,14 +1039,18 @@ s1 <= s2
 s1 == s2
 s1 != s2
 ```
+
 - **Tow set objects are equal if their element are same doesn't matter the order of elements.**
 
 #### 🌟 Changing elements in a `set` :-
-- **Sets are mutable so we can change their elements. Because sets are unordered you cannot access or change an item or items through indexing or slicing.**
+
+- **Sets are mutable so we can change their elements. Because sets are unordered you cannot access or change an item or
+  items through indexing or slicing.**
 
 1. `add()` :- **This method is used to append a single element to a `set`.**
-2. `update()` :- **This method is used to add multiple elements to a set. Strings, lists tuples or other set can be used as argument when we use `update()` method.**
-   - **This method only element value not a data type.**
+2. `update()` :- **This method is used to add multiple elements to a set. Strings, lists tuples or other set can be used
+   as argument when we use `update()` method.**
+    - **This method only element value not a data type.**
 
 ```python
 my_set = {2, 4, 6, 8, 10}
@@ -1043,10 +1064,15 @@ print(my_set)
 ```
 
 ### 🌟 Removing `set` elements :-
+
 - There are two methods to remove a specific item from a set.
-1. `remove()` **:-** 👉 **&nbsp; This method is used to remove an item to a set. It `raise error` when the given argument does not exist.**
-2. `discard()` **:-** 👉 **&nbsp; It is used to remove an item from a set. It does not raise error when the given argument does not exist. It simply remains unchanged to set.**
-3. `pop()` **:-** 👉 **&nbsp;This method is used to remove and return and item on a set. Because set it unordered so we cannot possibly control which item will be popped.**
+
+1. `remove()` **:-** 👉 **&nbsp; This method is used to remove an item to a set. It `raise error` when the given argument
+   does not exist.**
+2. `discard()` **:-** 👉 **&nbsp; It is used to remove an item from a set. It does not raise error when the given
+   argument does not exist. It simply remains unchanged to set.**
+3. `pop()` **:-** 👉 **&nbsp;This method is used to remove and return and item on a set. Because set it unordered so we
+   cannot possibly control which item will be popped.**
 4. `clear()` **:-** 👉 **&nbsp;This method is used to remove all elements on a set.**
 
 ```python
@@ -1058,7 +1084,7 @@ print(my_set)
 
 # discard() method 
 my_set.discard("d")
-{'c', 'b', 'a'}
+#  << {'c', 'b', 'a'}
 print(my_set)
 
 # pop() method
@@ -1069,3 +1095,411 @@ print(my_set)
 my_set.clear()
 print(my_set)
 ```
+
+### 🌟  `set` operations :-
+
+1. **`set` union :-** 👉 &nbsp; A union of two sets refers to a set that contains all elements from the given sets. We
+   can use `|`  operator or the union method to perform the operation. The result is a combination of all elements which
+   are returned in ascending order.
+    - **Example :-** 👇
+
+```python
+x = {1, 3, 5, 7, 9}
+y = {2, 4, 6, 8, 10}
+
+# using union operator
+print(x | y)
+# <<< {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+# ---------------- This is another method to do the above task using union method
+result = x.union(y)
+print(result)
+# <<< {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+print(y.union(x))  # this is the same result of above task
+# <<< {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+```
+
+- **`set` Intersection :-** 👉 &nbsp; **The intersection of two sets refers to the set of common elements between them .
+  It is performed with either the `&` operator or the `intersection()` method. Both returns a set with elements that are
+  arranged in ascending order.**
+
+```python
+x = {1, 3, 5, 7, 9}
+z = {3, 7, 9, 11, 13, 15, 1}
+
+# using intersection(&) operator
+print(x & z)
+# <<< {1, 3, 9, 7}
+
+# ---------------- This is another method to do the above task using intersection method
+print(x.intersection(z))
+# <<< {1, 3, 9, 7}
+
+print(z.intersection(x))  # this is the same result of above task
+# <<< {1, 3, 9, 7}
+```
+
+- **`set` Difference :-** 👉 &nbsp; **`set` Difference refers to a set of elements that are found in one set but not in
+  other set.**
+    - **The difference of `X` and `Y` `(X-Y)` is a set of elements that can be found in `X` but not in `Y`.**
+
+```python
+x = {1, 2, 3, 5, 7, 9}
+y = {2, 8, 9, 5, 2, 1}
+
+# using difference(-) operator
+print(x - y)
+# <<< {3,7}
+
+# ---------------- This is another method to do the above task using difference method
+result = x.difference(y)
+print(result)
+# <<< {3, 7}
+
+print(y.difference(x))
+# <<< {8}
+```
+
+- **`set` Symmetric Difference :-** 👉 &nbsp; **The symmetric difference between two sets refers to the set of elements
+  that are not common in both sets.**
+    - **It is performed with either the `^` operator or the symmetric difference method.**
+
+```python
+x = {1, 3, 5, 4, 6, 8}
+y = {5, 2, 6, 1, 8, 10}
+
+# using symmetric difference(^) operator
+print(x ^ y)
+# << {2, 3, 4, 10}
+
+# using symmetric_difference method 
+result = x.symmetric_difference(y)
+print(result)
+# << {2, 3, 4, 10}
+```
+
+### 🌟 `set` object methods:-
+
+1. `add()`
+2. `update()` 👉 **&nbsp; This method add only value.**
+3. `discard()` 👉 **&nbsp; This method does not raise error.**
+4. `remove()`
+5. `intersection()`
+6. `union()`
+7. `clear()`
+8. `issubset()`
+9. `issuperset()`
+10. `pop()`
+
+### 🌟 `set` comprehension :-
+
+- **Syntax :-** 👇
+
+```text
+set_object = {expression for e in set_object } 
+```
+
+- **Example :-** 👇
+
+```python
+user_input = input("Enter a string: ")
+s1 = {e for e in user_input if e in "aeiou"}
+```
+
+### 🌟 User input :-
+
+```python
+s = input("Enter elements separated by comma : ")
+s1 = {eval(e) for e in s.split(",")}
+```
+
+-----------
+
+## 🌟 Dictionary <span id="dict"><span>:-
+
+- **`dict` is a class.**
+- **`dict` is mutable.**
+- **`dict` is not hashable.**
+- **`dict` is iterable.**
+- **`dict` is not a sequence.**
+- **`dict` cannot have duplicate keys (not data values).**
+- **indexing is not applicable to `dict` to object.**
+- **slicing operator is not applicable.**
+- **`dict` elements are a pair of key-value and data-value.**
+- **A dictionary is an unordered collection of key-value pairs which are separated by a colon and enclosed with in curly
+  braces `{}`.**
+
+### 🌟 How to create `dict` object :-
+
+- We can create a dictionary with the following way :-
+
+```python
+d1 = {102: "Rahul", 105: "Ganesh", 107: "Arjun", 109: "Mahesh"}
+
+# empty dict object
+d2 = {}
+```
+
+- Another way of creating dictionary is with `dict()` function that is a built function. This function allows
+  programmers to create a dictionary out of a `list` of `tuple` pairs. Each pair will have two elements that can be used
+  as a key and a value.
+- When we use `dict` function then we will have to pass key and value pair and key is a variable name.
+
+```python
+# To create a dictionary using dict function 
+d3 = dict(a=10, b=20, c=30)
+
+# create a dictionary of list of tuples
+pairs = [("cat", "kitten"), ("dog", "puppy")]
+d4 = dict(pairs)
+print(d4)
+# <<< {'cat': 'kitten', 'dog': 'puppy'}
+```
+
+### 🌟 How To Access `dict` elements :-
+
+- **Since a dictionary is an unordered data type so we can not use indexing to access values. We will instead use its
+  keys.**
+- **We can access data place the keys inside the square brackets.**
+- **We can access the same value with `get()` method.**
+
+```python
+d1 = {
+    102: "Mahesh",
+    103: "Payal",
+    104: "Ganesh",
+    105: "Rahul",
+    106: "Arjun"
+}
+
+# To print dictionary
+print(d1)
+
+# To access dict elements
+print(d1[102], d2[103], d1[104], d1[106])
+# <<< Mahesh Payal Ganesh Arjun
+
+# To access dict elements using get method.
+d1.get(102)
+# <<< 'Mahesh'
+
+# using for loop
+for k in d1:
+    # this will print only keys
+    print(k, end=" ")
+
+for k in d1:
+    # this will print keys and values 
+    print(k, d1[k], end="")
+```
+
+### 🌟 How To Edit or Add `dict` elements :-
+
+- **We can easily add new items or modify the value of existing keys with the assignment operator `=`.**
+- **When we assign a `key:value` pair to a dictionary.Python checks that the already exists on the dictionary or not. If
+  there is a similar key the value simply gets updated.**
+- **If it is a unique key then the `key:value` pair is added to the dictionary.**
+- **Editing `dict` elements means you want to change data-value of element and not the key-value.**
+- To edit new elements in the `dict`
+- **Syntax :-** 👇
+    ```text
+    dictObject[key_value]= new_data_value
+    ```
+- To add new elements in the `dict` :-
+- **Syntax :-** 👇
+    ```text
+    dictObject[new_key_value]= new_data_value
+    ```
+- **Example :-** 👇
+
+```python
+d5 = {"name": "ganesh", "age": 21, "ranking": 1}
+# updating value of dictionary
+d1['age'] = 22
+print(d5)
+# <<< {"name": "ganesh", "age": 22, "ranking": 1}
+```
+
+### 🌟 Removing or Deleting Elements from a dictionary :-
+
+- `pop()` **:- 👉** **&nbsp; This method is used to remove the pair and returns the value for the given key.**
+    - **Example :-** 👇
+
+```python
+dct = {
+    "ocean": "Pacific Ocean",
+    "sea": "Baltic Sea",
+    "river": "Yamuna"
+}
+# using pop method
+element = dct.pop('river')
+print(element)
+# <<< Yamuna
+
+print(dct)
+# <<< {'ocean': 'Pacific Ocean', 'sea': 'Baltic Sea'}
+
+# adding new elements in a dictionary
+dct['status'] = 'regular'
+
+print(dct)
+# <<< {'ocean': 'Pacific Ocean', 'sea': 'Baltic Sea', 'status': 'regular'}
+``` 
+
+- **To delete any pair of dictionary we can also use `del` keyword.**
+
+```python
+dct = {'ocean': 'Pacific Ocean', 'sea': 'Baltic Sea', 'river': 'Yamuna'}
+del dct['river']
+print(dct)
+# <<< {'ocean': 'Pacific Ocean', 'sea': 'Baltic Sea'}
+```
+
+- `clear()`**:-**  &nbsp; 👉 It is used to remove all items in a dictionary.
+
+```python
+dct.clear()
+print(dct)
+# empty dictionary 
+# <<< { } 
+```
+
+- `popitem()` :- 👉 This method takes no argument and remove an arbitrary pair from the dictionary. It is also return a
+  `tuple` of keys and values that is removed.
+    - Using `popitem` method we could no control over the value it will remove.
+
+```python
+dct = {
+    "ocean": "Pacific Ocean",
+    "sea": "Baltic Sea",
+    "river": "Danube"
+}
+dct.popitem()
+```
+
+### 🌟 Concatenation And Repetition Operator :-
+
+1. `dict` + `dict` 👉 &nbsp; **not supported**
+2. `dict` * `int` &nbsp; 👉 &nbsp; **not supported**
+
+### 🌟 Comparison Operator :-
+
+1. `d1 > d2` &nbsp; 👉 &nbsp;  **not supported**
+2. `d1 >= d2` 👉 &nbsp; **not supported**
+3. `d1 < d2` &nbsp; 👉 &nbsp; **not supported**
+4. `d1 <= d2` 👉 &nbsp; **not supported**
+5. `d1 == d2` 👉 &nbsp; **supported**
+6. `d1 != d2` 👉 &nbsp; **supported**
+
+- **Two `dict` objects are equal if their items are equal Elements can be stored in any order.**
+
+### 🌟 Other Python Dictionary Methods :-
+
+1. `items()` :- 👉 &nbsp; **This method returns list of dictionary keys-value pairs.**
+    - **Syntax:-** 👇
+        - `dict.items()`
+2. `values()` :- 👉 &nbsp; **This method returns a list of dictionary values.**
+    - **Syntax:-** 👇
+        - `dict.values()`
+3. `keys()` :- 👉 &nbsp; **This method returns a list of dictionary keys.**
+    - **Syntax:-** 👇
+        - `dict.keys()`
+
+```python
+dct = {"name": "Rocky", "age": 21, "rank": 2}
+
+# this method returns all dictionary values.
+print(dct.values())
+# <<< dict_values(['Rocky', 21, 2])
+
+# this method returns all dictionary keys.
+print(dct.keys())
+# <<< dict_keys(['name', 'age', 'rank'])
+
+# this method returns all dictionary key-value pairs
+print(dct.items())
+# <<< dict_items([('name', 'Rocky'), ('age', 21), ('rank', 2)])
+```
+
+4. `setdefault()` :- 👉 This method searches for a given key in a dictionary and returns the value if found.
+    - **Syntax :-** 👇
+    ```text
+    dict_object.setdefault(key_name,Default_value=None)
+    ```
+5. **`copy()` :-** 👉 **&nbsp; This method returns a copy of dictionary.It allows us to modify the dictionary copy
+   without altering the original file.**
+    - **If we don't copy the dictionary then everything that we will be change in copied variable that will be also
+      apply on original dictionary element.**
+    - **To get rid of this we will have to use `copy()` method of `dict` class.**
+
+```python
+student_dct = {"name": "ganesh", "age": 22, "gender": "Male"}
+# put dictionary in a variable named dct
+dct = student_dct
+dct["name"] = "Mahesh"
+print(dct)
+# <<< {'name': 'Mahesh', 'age': 22, 'gender': 'Male'}
+print(student_dct)
+# <<< {'name': 'Mahesh', 'age': 22, 'gender': 'Male'}
+```
+
+6. **`fromkeys()`:-** 👉 **&nbsp; This method takes a sequence of items and uses them as keys to create a new dictionary.
+   It allows a second argument through which you can provide a value that will be attached to the keys on the new
+   dictionary.**
+    - **Syntax :-** 👇
+    - `dct_object.fromkeys(iterable,value)`
+
+```python
+appliance = ["monitor", "mouse", "keyboard", "speaker"]
+# create an empty dictionary
+dct = {}
+new_dct = dct.fromkeys(appliance, 10)
+print(new_dct)
+# <<< {'monitor': 10, 'mouse': 10, 'keyboard': 10, 'speaker': 10}
+```
+
+7. **`update()` :-** 👉 &nbsp; **This method is used to add new key-value in the existing dictionary.**
+
+```python
+course_dct = {"name": "Python", "fees": 8000, "duration": "2 months"}
+course_dct.update({"fees": 10000})
+print(course_dct)
+# <<< {'name': 'Python', 'fees': 10000, 'duration': '2 months'}
+
+# We can also do the above task like the following way :-
+course_dct["fees"] = 10000
+print(course_dct)
+# <<< {'name': 'Python', 'fees': 10000, 'duration': '2 months'}
+```
+
+### 🌟 Dictionary Comprehension :-
+
+- I**t is a concise way of creating a new dictionary from a python iterable.. It consists of key-value expression and a
+  for statement enclosed in curly braces `{ }`.**
+
+```python
+number_square = {x: x ** 2 for x in range(10)}
+print(number_square)
+# <<< {0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+even_number_square = {x: x ** 2 for x in range(1, 11) if x % 2 == 0}
+print(even_number_square)
+# <<< {2: 4, 4: 16, 6: 36, 8: 64, 10: 100}
+```
+
+### 🌟 Important methods of Dictionary :-
+
+1. `get(key, default=None)`
+2. `setdefault(key, default=None)`
+3. `update()`
+4. `copy()`
+5. `fromkeys(iterable, value=None)`
+6. `clear()`
+7. `pop(key)`
+8. `popitem()`
+9. `keys()`
+10. `values()`
+11. `items()`
+
+### 🌟 Nested Dictionary :-
