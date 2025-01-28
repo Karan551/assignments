@@ -1,4 +1,4 @@
-<h1 align="center">Index</h1>
+from urllib3 import proxy_from_url<h1 align="center">Index</h1>
 <ol>
     <li><a href="#python-intro">Python</a></li>
     <li><a href="#use-of-python">Use Of Python</a></li>
@@ -1503,3 +1503,100 @@ print(even_number_square)
 11. `items()`
 
 ### 🌟 Nested Dictionary :-
+
+A dictionary can contain dictionaries this is called nested dictionaries.
+
+```text
+dict = {
+"dict1" : { },
+"dict2" : { }
+}
+```
+
+- Example :- 👇
+
+```python
+my_family = {
+    "child1": {
+        "name": "Ganesh",
+        "gender": "Male",
+    },
+    "child2": {
+        "name": "Mahesh",
+        "gender": "Male"
+    },
+    "child3": {
+        "name": "Kartik",
+        "gender": "Male"
+    },
+
+}
+```
+
+- Or If we want to add three dictionaries into a new dictionary.
+    - Create three dictionaries then create one dictionary that will contain the oter three dictionaries: -
+    - **Example :- 👇**
+
+```python
+child1 = {"name": "Ganesh", "gender": "Male"}
+child2 = {"name": "Mahesh", "gender": "Male"}
+child3 = {"name": "Kartik", "gender": "Male"}
+
+our_family = {
+    "child1": child1,
+    "child2": child2,
+    "child3": child3,
+}
+```
+
+### 🌟 Adding elements to a Nested Dictionary :-
+
+- First way to add a dictionary in the nested dictionary and then add values on by one like:-
+    - `nested_dict[dict][key] = value`
+    - Example :-👇
+
+```python
+# create a dictionary 
+dct = {}
+# add a empty dictionary 
+dct["dct1"] = {}
+
+# adding one element at a time
+dct["dct1"]["name"] = "Ganesh"
+dct["dct1"]["gender"] = "Male"
+print(dct)
+# <<< {'dct1': {'name': 'Ganesh', 'gender': 'Male'}}
+```
+
+- Second way is to add the whole dictionary in one dictionary :-
+    - `nested_dct["dict"]={"key" : "value"}`
+    - **Example :- 👇**
+```python
+dct = {}
+dct["dct1"] = {"name": "Ganesh", "gender": "Male"}
+print(dct)
+# <<< {'dct1': {'name': 'Ganesh', 'gender': 'Male'}}
+```
+
+### 🌟 Access Elements of a nested dictionary :-
+```python
+print(dct["dct1"]["name"])
+# <<< Ganesh
+print(dct["dct1"]["gender"])
+# <<< Male
+```
+
+### 🌟 Deleting dictionaries from a nested Dictionary :- 
+- Using `del` keyword or using `pop()` function  we can delete dictionary items.
+- 
+```python
+dct = {}
+dct["dct1"] = {"name": "Ganesh", "gender": "Male"}
+
+# using del keyword
+del dct['dct1']['gender']
+
+# or using pop method 
+dct["dct1"].pop("gender")
+print(dct)
+```
