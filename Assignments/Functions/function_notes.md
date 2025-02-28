@@ -1,16 +1,50 @@
-# Function :-
+# Function <span id="function"></span>:-
 
 - Function is a block of code which only runs when it is called.
 - Function has a name for identification.
+- A Function is a block of related statements that is used to perform a specific task.
+- Using functions enhances programme readability and comprehensibility.
 - **Syntax :- (To create a function or define a function)** 👇
 
 ```python
 def functionName(arguments):
+    """ docstring """
     # code
     # code
     pass
 ```
 
+- `def` keyword :- 👉 **The keyword `def` defines and names of the function and indicates the beginning of the header.**
+- **Colon `:`**  👉 **A colon marks the end of the function headers.**
+- **docstring :-** 👉 A documentation string or docstring is an optional component that is commonly used to describe what
+  the function does. It is written in next line to the function header. A docstring can span up to mulitple lines and
+  are encolsoed in triple quotes.
+    - We can access the docstring with `function_name.__doc__`
+    - For an example :- 👇
+        - `print(greet.__doc__)`
+            - **Where  `greet` is function name.**
+- **statement :-** 👉 **A function's body consist one or more valid statements. Multiple statemens use the same indentation to form a block.**
+- **`return` statement :-** **A `return` statement is used to return a value from a function. If a return statement is not given inside a function then the function will return object `None`.**
+- **Function calling :-** We can call the function by typing function name and providing the parameters.
+  - Example :- 👇
+    - `greet("Ram")`  ----> calling a function 
+  - **The another way to call the function another function or through a programme.**
+```python
+def class_sum(num):
+    return num * 3
+
+
+def school_sum(num):
+    return class_sum(num) + 3
+
+
+print(school_sum(5))
+# <<< 18
+print(school_sum(8))
+# <<< 27
+print(school_sum(15))
+# <<< 48
+```
 - Once function is defined it can be called any number of times.
 - **For example :-** 👇
 
@@ -25,12 +59,222 @@ result = addNum(10, 12)
 print("Result is :", result)
 
 ```
-- **If function name without parentheses that means only a reference of that function is passed. That function will 
+
+- **If function name without parentheses that means only a reference of that function is passed. That function will
   not be executed.**
 - **On other hand if function is written with parentheses so it will be called as usual.**
-- **A function name without a parentheses is a reference to the function , while a function name with trailing 
+- **A function name without a parentheses is a reference to the function , while a function name with trailing
   parentheses calls the function and refers to its return values.**
+
 -----
+## 🌟 Ways of define a function :-
+1. **Takes Nothing Returns Nothing**
+2. **Takes Something Returns Something**
+3. **Takes Nothing Returns Something**
+4. **Takes Something Returns Something**
+
+### 🌟 1. Takes Nothing Returns Nothing :-
+```python
+# function definition
+def add():
+    print("Enter two numbers: ")
+    a = int(input())
+    b = int(input())
+    c = a + b
+    print("sum is :", c)
+
+
+# calling a function
+add()   # Take nothing
+```
+
+### 🌟  2. Takes Something Returns Nothing :-
+```python
+# function definition
+def add(a, b):
+    c = a + b
+    print("sum is :", c)
+
+
+# calling a function
+add(10,20)  # Take something
+```
+
+### 🌟 Takes Nothing Return Something :-
+```python
+def add():
+  print("Enter two numbers : ")
+  a = int(input())
+  b = int(input())
+  c = a + b
+  return c
+
+```
+
+###  🌟 Default Arguments :-
+
+- **Default value indicate that the function argument will take that value if no argument value is passed during the function call.**
+- **The default value is assigned by using teh assignment(`=`) operator.**
+
+```python
+# function definition
+def add(a, b, c=0):
+    s = a + b + c
+    return s
+
+# function calling
+print("Sum is : ", add(5, 6, 10))
+print("Sum is : ", add(15, 6))
+
+````
+
+> **Note :- Non - default argument can not comes after default argument. <br/>**
+>  **You cannot have non defualt argument after default argument.**
+
+### 🌟 Positional vs Keyword Arguments :-
+
+```python
+# function definition
+
+def f1(a, b):
+    print(f"a = {a} , b = {b}")
+
+
+# function calling
+f1(2, 3)  # Here 2 and 3 are called positional arguments.
+
+f1(b=2, a=5) # Keyword arguments
+```
+- You cannot have positional arguments after keyword arguments.
+- Positional argument cannot follows keyword argument.
+```python
+f1(b=3, 2)  # This will give error.
+
+f1(2, b=5)  # This will not give error.
+```
+
+### 🌟 Variable Length Arguments :-
+- If we don't know how many arguments we have to pass in any functions then we will have to use variable length arguments.
+- Example :-
+```python
+def f1(*elements):
+    pass
+
+
+# function calling
+f1(10)
+f1(10, 50, 40)
+f1(10, 20, 30, 40, 50, 60)
+```
+
+### 🌟 Anonymous Function (Lambda Function) :-
+- A**nonymous function definded with the `lambda` keyword and without a name. An anonymous function is variably a `lambda` Function.**
+- **A `lambda` function can take any number of arguments, but only have one expression. The single expression is evaluated then returned.**
+- `lambda` function can take any number of arguments.
+- This function are commonly used when a nameless function is required on a short-term basis.
+
+**Syntax :-** 👇 <br />
+- `lambda arguments : expression`
+
+**Example:-** 👇 <br />
+```python
+# function definition
+square = lambda x: x ** 2
+
+# function calling
+result = square(10)
+print(f"Square is : {result}")
+
+# function definition
+total = lambda a, b, c: a + b + c
+
+# function calling
+print(f"Total value is : {total(10, 20, 15)}")
+```
+
+#### 🌟 `lambda` function with `map()` :-
+
+- Python `map()` function takes an iterable and another function reference.
+```python
+lst = [1, 2, 3, 4, 5, 6, 7]
+
+number_square_list = list(map(lambda x: x ** 2, lst))
+print(number_square_list)
+```
+- **The function argument is called with all elements in the list and returns a new list containing elements returned from each element in the oringinal list.**
+
+#### 🌟 `lambda` function with `filter()` :-
+- Python `filter()` function takes an iterable and another function reference as a parameter.
+
+```python
+lst = [12, 4, 1, 8, 96, 11, 5, 2, 12, 20]
+odd_number_lst = list(filter(lambda x: x % 2 != 0, lst))
+print(odd_number_lst)
+```
+-----
+## 🌟 Python Inner Functions :-
+
+- **A function which is defined inside another function is known as inner function or nested function. Nested function are able to access variables of the enclosing scope.**
+- **Inner function are used so that they can be protected from everything happening outside the function. This process is also know as Encapsulation.**
+
+```python
+def outer_function(text):
+    text = text
+
+    def inner_function():
+        print(text)
+    
+    # calling inner function
+    inner_function()
+
+# calling outer function
+outer_function("Hello World!")
+# <<< Hello World!
+
+```
+- **It is important that outer function has to be called so that the inner function can execute.**
+- **If we not call outer function then the inner function will not be execute also.**
+
+### 🌟 Scope of variable in nested function :-
+- The location where we can find a variable and also access it if required is called the scope of variable.
+```python
+def f1():
+    s="I write code."
+    
+    def f2():
+        print(s)
+    
+    # inner function calling
+    f2()
+
+# outer function calling
+f1()
+# <<< I write code.
+```
+#### 🌟 Demonstrate accessing a variable using nested functions :-
+
+```python
+def f1():
+    s= "I write code."
+    
+    def f2():
+      s = "Hello world!"
+      print(s)
+    
+    # inner function calling
+    f2()
+    print(s)
+    
+
+# outer function calling
+f1()
+# <<< Hello world!
+# <<< I write code.
+```
+-----
+- It can be seen the value of the variable of the outer function is not changed.However the value of the variable of the outer function can be changed. There are different ways to change the value of the variable of the outer function.
+
+1. **Using `nonlocal` keyword**
 
 ## Python’s Functions Are First-Class :-
 
@@ -300,10 +544,13 @@ yell("hello world")
   print(plus_5(12))
   # >>> 17
   ```
-- **Behind the scenes, “calling” an object instance as a function attempts to execute the object’s** `__call__` **method.**
+- **Behind the scenes, “calling” an object instance as a function attempts to execute the object’s** `__call__` *
+  *method.**
 
-###  Functions can be Stored in Data Structures :- 
-- **As functions are first-class citizens you can store them in data structures, just like you can with other objects. For example, you can add functions to a list:**
+### Functions can be Stored in Data Structures :-
+
+- **As functions are first-class citizens you can store them in data structures, just like you can with other objects.
+  For example, you can add functions to a list:**
 
   ```python
   funcs = [bark, str.lower, str.capitalize]

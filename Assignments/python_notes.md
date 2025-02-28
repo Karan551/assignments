@@ -1,4 +1,4 @@
-from urllib3 import proxy_from_url<h1 align="center">Index</h1>
+<h1 align="center">Index</h1>
 <ol>
     <li><a href="#python-intro">Python</a></li>
     <li><a href="#use-of-python">Use Of Python</a></li>
@@ -9,9 +9,13 @@ from urllib3 import proxy_from_url<h1 align="center">Index</h1>
     <li><a href="#tuple">Tuple</a></li>
     <li><a href="#set">Set</a></li>
     <li><a href="#dict">Dictionary</a></li>
+    <li><a href="#string">String</a></li>
 </ol>
 
+
+11. [Functions](../Assignments/Functions/function_notes.md)
 --------
+
 
 # Python <span id="python-intro"></span> :-
 
@@ -1571,6 +1575,7 @@ print(dct)
 - Second way is to add the whole dictionary in one dictionary :-
     - `nested_dct["dict"]={"key" : "value"}`
     - **Example :- 👇**
+
 ```python
 dct = {}
 dct["dct1"] = {"name": "Ganesh", "gender": "Male"}
@@ -1579,6 +1584,7 @@ print(dct)
 ```
 
 ### 🌟 Access Elements of a nested dictionary :-
+
 ```python
 print(dct["dct1"]["name"])
 # <<< Ganesh
@@ -1586,9 +1592,11 @@ print(dct["dct1"]["gender"])
 # <<< Male
 ```
 
-### 🌟 Deleting dictionaries from a nested Dictionary :- 
-- Using `del` keyword or using `pop()` function  we can delete dictionary items.
-- 
+### 🌟 Deleting dictionaries from a nested Dictionary :-
+
+- Using `del` keyword or using `pop()` function we can delete dictionary items.
+-
+
 ```python
 dct = {}
 dct["dct1"] = {"name": "Ganesh", "gender": "Male"}
@@ -1600,3 +1608,111 @@ del dct['dct1']['gender']
 dct["dct1"].pop("gender")
 print(dct)
 ```
+
+## 🌟 String <span id="string"></span>:-
+
+- `str` is immutable(unchangeable).
+- `str` is iterable.
+- `str` is hashable.
+- `str` is sequence.
+
+### 🌟 How to create `str` object :-
+
+```python
+s1 = "Iron man"
+s2 = 'Iron man'
+s3 = '''Iron man'''
+s4 = """Iron man"""
+s5 = str()
+s6 = str(125)
+s7 = str(3.45)
+```
+
+### 🌟 Indexing :-
+
+`s1="Master"`
+
+- Insert picture here
+
+### 🌟 Accessing `str` elements :-
+
+1. `s1[index]`
+2. `print(s1)`
+3. `for loop`
+4. slicing operator `[::]`
+
+### 🌟 Concatenation and Repetition operator :-
+
+```python
+s1 = "ABC"
+s2 = "DE"
+# concatenation operator
+print(s1 + s2)
+# <<< 'ABCDE'
+
+# repetition operator
+print(s1 * 3)
+# <<< ABCABCABC
+```
+
+### 🌟 Comparison operator :-
+
+`s1>s2` 👉 `True`
+
+- **Above statement is correct if `s1` comes after `s2` in dictionary order.**
+
+### 🌟 `str` object methods :-
+
+1. `index()`
+2. `count()`
+3. `startswith()`
+4. `endswith()`
+5. `split(sep=None, maxsplit=-1)` 👉 Return a list of the words in the string, using sep as the delimiter string. If `maxsplit` is given, at most `maxsplit` splits are done (thus, the list will have at most `maxsplit+1` elements). If `maxsplit` is not specified or `-1`, then there is no limit on the number of splits (all possible splits are made).
+    - **This method Returns `list` of `str` type of elements.**
+    - If `sep` is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings.
+    - If `sep` is not specified or is `None`, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a `None` separator returns `[]`.
+     
+6. `join(iterable)` 👉 **Return a string which is the concatenation of the strings in iterable. A TypeError will be
+   raised if there are any non-string values in iterable, including bytes objects.**
+7. `format()`
+8. `isdigit()`
+9. `islower()`
+10. `isupper()`
+11. `lower()`
+12. `upper()`
+13. `replace(old, new ,count= -1)` :-👉 **Return a copy of the string with all occurrences of substring old replaced by
+    new. If count is given, only the first count occurrences are replaced. If `count` is not specified or `-1`, then all
+    occurrences are replaced.**
+
+14. `find()`
+15. `rfind()`
+16. `capitalize()`
+17. `title()`
+18. `swapcase()`
+19. `istitle()`
+20. `strip()`
+21. `rstrip()`
+22. `isspace()`
+23. `isalpha()`
+24. `isdigit()`
+25. `startswith()`
+26. `endswith()`
+27. `encode()`
+28. `decode()`
+
+```python
+s1 = "MySirG Education Services"
+l1 = s1.split(' ')
+print(l1)
+# <<< ['MySirG', 'Education', 'Services']
+
+s2 = "10,20,30,40,50,60"
+l2 = s2.split(',')
+# <<< ['10', '20', '30', '40', '50', '60']
+
+num_list = [int(e) for e in l2]
+print(num_list)
+# <<< [10, 20, 30, 40, 50, 60]
+```
+- `split()` 👉 `str` ---> `list` of `str` elements. (Returns `list`)
+- `join()`  👉 Returns `str`.
