@@ -40,6 +40,20 @@ arrange_arr = np.arange(2, 20, 2)
 arr_3 = np.sort(arr)
 # print(arr_3)
 arr_4 = np.sort(arr_2)
+
+
 # print(arr_4)
 
 # print(np.concatenate((arr,arr_2)))
+
+def eye_identity():
+    row, col = map(int, input("enter your input:: ").split())
+    # print(*user_input)
+    arr_identity = np.eye(row, col)
+    print(arr_identity)
+    pass
+
+
+if __name__ == '__main__':
+    eye_identity()
+    pass

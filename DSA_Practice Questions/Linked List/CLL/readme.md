@@ -19,6 +19,9 @@
 4. Searching
 5. Checking For Empty List
 
+### 🌟 Important Points :-
+- **If `CLL` contains only one item then that Node contains reference of self.**
+- **Circular Linked List Performance is better than SLL so we can use CLL place of SLL.**
 -------
 
 ## Basic Practice Problems On CLL: -

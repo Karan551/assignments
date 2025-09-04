@@ -5,6 +5,9 @@
     <li><a href="#feature">Feature of Python</a></li>
     <li><a href="#python-intro">Data Type</a></li>
     <li><a href="#keywords">Keywords</a></li>
+    <li><a href="#operators">Operators</a></li>
+    <li><a href="#decison_control">Decision Control</a></li>
+    <li><a href="#loops">Loops</a></li>
     <li><a href="#list">List</a></li>
     <li><a href="#tuple">Tuple</a></li>
     <li><a href="#set">Set</a></li>
@@ -12,10 +15,9 @@
     <li><a href="#string">String</a></li>
 </ol>
 
+12. [Functions](../Assignments/Functions/function_notes.md)
 
-11. [Functions](../Assignments/Functions/function_notes.md)
 --------
-
 
 # Python <span id="python-intro"></span> :-
 
@@ -319,7 +321,295 @@ chr(x)
 
 -----
 
+### 🌟 Operators :- <span id="operators"></span>
+
+- **Operators are functions in Python.**
+- `a + b` ---> `__add__(a,b)`
+
+##### 🌟 Various Operators in Python (Alphabetical Order) :-
+
+1. Addition &emsp; ----> &emsp; `a+b`
+2. Concatenation &ensp; ----> &emsp; `a+b`
+3. Containment Test &ensp; ----> &emsp; `a in obj`
+4. Division (True Division) &emsp; ----> &emsp; `a/b`
+5. Division (Floor Division) &emsp; ----> &emsp; `a//b`
+6. Bitwise AND &emsp; ----> &emsp; `a & b`
+7. Bitwise Exclusive OR &emsp; ----> &emsp; `a^b`
+8. Bitwise Not &emsp; ----> &emsp; `~ a`
+9. Bitwise OR &emsp; ----> &emsp; `a | b`
+10. Exponentation &emsp; ----> &emsp; `a ** b`
+11. Identity &emsp; ----> &emsp; `a is b`
+12. Identity &emsp; ----> &emsp; `a is not b`
+13. Indexed Assignment &emsp; ----> &emsp; `obj[i] = a`
+14. Indexed Deletion &emsp; ----> &emsp; `del obj[i]`
+15. Indexing &emsp; ----> &emsp; `obj[i]`
+16. Left Shift &emsp; ----> &emsp; `a << b`
+17. Logical AND &emsp; ----> &emsp; `a and b`
+18. Logical OR &emsp; ----> &emsp; `a or b`
+19. Modulo &emsp; ----> &emsp; `a % b`
+20. Multiplication or Repetition &emsp; ----> &emsp; `a * b`
+21. Negation &emsp; ----> &emsp; `- a`
+22. Negation Logical &emsp; ----> &emsp; `not a`
+23. Positive &emsp; ----> &emsp; `+ a`
+24. Right Shift &emsp; ----> &emsp; `a >> b`
+25. Slice Assignment &emsp; ----> &emsp; `s[i:j] = values`
+26. Slice Deletion &emsp; ----> &emsp; `del s[i:j]`
+27. Slicing &emsp; ----> &emsp; `s[i:j]`
+28. String Formatting &emsp; ----> &emsp; `s % s`
+29. Subtraction &emsp; ----> &emsp; `a - b`
+30. Ordering (less than) &emsp; ----> &emsp; `a < b`
+31. Ordering (greater than) &emsp; ----> &emsp; `a > b`
+32. Ordering (less than or equal to) &emsp; ----> &emsp; `a <= b`
+33. Ordering (greater than equal to) &emsp; ----> &emsp; `a >= b`
+34. Equality &emsp; ----> &emsp; `a == b`
+35. Not Equal &emsp; ----> &emsp; `a != b`
+
 ### 🌟 Operators :-
+
+1. **Arithmetic Operators :-** 👉 `** , / , //, *, %, +, -,`
+2. **Relational Operators (Comparison Operators) :-** 👉 `>, <, >=,<=, ==, !=`
+3. **Logical Operators :-** 👉 `not, and, or`
+4. **Bitwise Operators :-** 👉 `& , |, ^, ~, >>, <<`
+5. **Assignment Operators :-** 👉 `= , += , -= , /= , //= , %= , **= , *= , &= , |= , ^= , >>= , <<=`
+6. **Identity Operators :-** 👉 `is , is not`
+7. **Membership Operators :-** 👉 `in , not in`
+
+- No `++` , `--` Operators in Python.
+- `a / b` ----> `float (always)`
+- `a // b` ----> floor
+    - any of `a & b` is `float` ----> `float`
+    - `a & b` `int` ----> `int`
+- `/` always return `float` result.
+- `//` always return floor value , `int` type or `float` type depending operands.
+- `+` , `*` can be used with `str` type values also.
+
+##### 🌟 &emsp; 1. Relational Operators :-
+
+- `< , > , <= , >=` ------> **Inequality Operator**
+- `==` , `!=` &emsp; &emsp; &emsp;&nbsp; ------> **Equality Operator**
+    - **Equality Operator Never gives error.**
+- **Relational Operators** always give result in `True` or `False`.
+- **When `True` value is converted to `int` it becomes `1` for True and `0` for `False`.**
+- **Relational Operators can also be used to compare two strings.**
+- **Only `==` and `!=` operators can be used between two complex type values.**
+- **`==` and `!=` never yield error.**
+
+##### 🌟 &emsp; 2. Logical Operators :-
+
+- `not`, `and`, `or`
+- **logical operator must be written in lowercase only.**
+
+1. `not True` &emsp; &emsp;&emsp;&emsp;&ensp;-----> &emsp; `False`
+2. `not False` &emsp;&emsp;&emsp;&emsp; -----> &emsp; `True`
+
+3. `True and True` &emsp;&emsp; ----> &emsp; `True`
+4. `True and False` &ensp;&emsp; ----> &emsp; `True`
+5. `False and X` &emsp;&emsp;&emsp; ----> &emsp; `False`
+
+6. `False or False` &ensp;&emsp; ----> &emsp; `False`
+7. `False or True` &emsp;&emsp; ----> &emsp; `True`
+8. `True or X` &emsp; &emsp;&ensp;&emsp;&nbsp; ----> &emsp; `True`
+
+##### 🌟 Some Important Points :-
+
+1. **Every non zero value** &emsp; 👉 `True`
+2. **Every zero value** &emsp;&nbsp; 👉 `False`
+3. **Non empty string** &emsp; 👉 `True`
+4. **Empty String** &emsp;&emsp;&ensp;&ensp; 👉 `False`
+
+- **When operands are non-bool then result will also be non-bool.**
+
+##### 🌟 &emsp; 3. Assignment Operators :-
+
+- **How to assign multiple values to multiple variables in single line ?**
+
+```python
+a, b, c = 15, 20, 12
+```
+
+##### 🌟 &emsp; 4. Identity Operators :-
+
+- It checks whether the two reference referring to the same object or no. It results in `True` or `False`.
+
+```python
+lst = [12, 13, 14]
+lst2 = [12, 13, 14]
+
+# This will become True because value is same.
+print(lst == lst2)
+# <<< True
+
+# This wll become False because they do not contain same data reference.
+print(lst is lst2)
+# <<< False
+```
+
+##### 🌟 &emsp; 5. Membership Operators :-
+
+- `in` , `not in`
+- These operators are applicable only on containers (iterables).
+- They give result `True` or `False`.
+- Contain is a type which can contain multiple values and also iterable.
+- `int`, `float`, `complex`, `bool` are not iterable.
+- `str`, `range`, `list`, `tuple`, `set`, `dict` are iterable.
+
+### 🌟🌟 Decision Control <span id="decison_control"></span> :-
+
+- **Decision Control :-**
+    - `if`
+    - `if else`
+    - `if elif else`
+    - `single line if else `
+- **`match` case :-**
+- **Iterative Control :-**
+
+### 🌟 Single line `if` `else` :-
+
+```text
+code_1 if (condition) else code_2
+```
+
+- **Single line if else is an expression but if else is not na expression.**
+- **We can store single line `if` `else` statement in a variable.**
+
+### 🌟 `match` case :-
+
+```text
+match subject_expression:
+    case constant:
+        ----------
+        ----------
+        ----------
+    case constant:
+        ----------
+        ----------
+        ----------
+    case constant:
+        ----------
+        ----------
+        ----------
+```
+
+- `break` keyword can not be used in `match` block.
+- `match` is a soft keyword.
+- **case constant can be of any type**
+
+```python
+x = int(input("Enter a number: "))
+
+match x:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case 3:
+        print("Three")
+    # constant 👉 It is any type --> str , num , bool
+    case 4:
+        print("Four")
+```
+
+### 🌟 default matching :-
+- **Example :-** 👇
+
+```python
+x = int(input("Enter a number: "))
+match x:
+    case "one":
+        print("One")
+    case "two":
+        print("One")
+    case 3.1:
+        print("Three")
+    case _:
+        print("default")
+```
+- `match` and `case` are soft keywords.
+- **They are not reserved words in other grammatical contexts.**
+- They are recognized as keywords when part of a match statement or case block only and are allowed to be used in all other contexts as variables or arguments names.
+
+##### 🌟 duplicate case :-
+- **duplicate case is not an error but first match will only work.**
+
+-----
+
+## 🌟🌟 Loops <span id="loops"></span> :-
+
+### 🌟 `while` loop :-
+
+- **Syntax :-** 👇
+```text
+while condition:
+    code
+    code
+    code
+```
+### 🌟 `break` :-
+- `break` is a keyword.
+- `break` is used for transfer control outside the loop body.
+- `break` can only be used in the body of loop.
+- `break` terminates the execution of loop.
+
+### 🌟 `continue` :-
+- `continue` is a keyword.
+- It can only be use in the body of loop.
+- `continue` transfer the control immediately to the next iteration.
+
+- **Example :-** 👇
+```python
+i = 1
+x = int(input("Enter a number: "))
+while i <= 10:
+    if x % 2 == 0:
+        continue
+    print(f"{i}, x= {x}")
+    i += 1
+```
+
+### 🌟 `else` with `while` loop :-
+
+```python
+while condition:
+    # code
+    # code
+    pass
+else:
+    # code
+    pass
+```
+- `else` block executes when while loop terminates normally.
+- `else` block won't be executed when loop terminates due to `break` keyword.
+
+-  🌟 `pass` :- pass keyword is used to create an empty block.
+
+
+```python
+
+if True:
+    pass
+
+# another example
+while True:
+    pass
+```
+
+### 🌟 `for` loop :-
+- `for` loop only works on iterable.
+
+- **Syntax :-** 👇
+```text
+for variable in iterable:
+    code
+    code
+    code
+```
+- Example :- 👇
+```python
+for x in "IronMan":
+    print(x)
+```
+
+### 🌟 `while` vs `for` loop :-
 
 ----- 
 
@@ -1667,11 +1957,16 @@ print(s1 * 3)
 2. `count()`
 3. `startswith()`
 4. `endswith()`
-5. `split(sep=None, maxsplit=-1)` 👉 Return a list of the words in the string, using sep as the delimiter string. If `maxsplit` is given, at most `maxsplit` splits are done (thus, the list will have at most `maxsplit+1` elements). If `maxsplit` is not specified or `-1`, then there is no limit on the number of splits (all possible splits are made).
+5. `split(sep=None, maxsplit=-1)` 👉 Return a list of the words in the string, using sep as the delimiter string. If
+   `maxsplit` is given, at most `maxsplit` splits are done (thus, the list will have at most `maxsplit+1` elements). If
+   `maxsplit` is not specified or `-1`, then there is no limit on the number of splits (all possible splits are made).
     - **This method Returns `list` of `str` type of elements.**
     - If `sep` is given, consecutive delimiters are not grouped together and are deemed to delimit empty strings.
-    - If `sep` is not specified or is `None`, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a `None` separator returns `[]`.
-     
+    - If `sep` is not specified or is `None`, a different splitting algorithm is applied: runs of consecutive whitespace
+      are regarded as a single separator, and the result will contain no empty strings at the start or end if the string
+      has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just
+      whitespace with a `None` separator returns `[]`.
+
 6. `join(iterable)` 👉 **Return a string which is the concatenation of the strings in iterable. A TypeError will be
    raised if there are any non-string values in iterable, including bytes objects.**
 7. `format()`
@@ -1714,5 +2009,6 @@ num_list = [int(e) for e in l2]
 print(num_list)
 # <<< [10, 20, 30, 40, 50, 60]
 ```
+
 - `split()` 👉 `str` ---> `list` of `str` elements. (Returns `list`)
 - `join()`  👉 Returns `str`.

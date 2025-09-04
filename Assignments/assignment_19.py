@@ -101,7 +101,7 @@ end_num = int(input("Enter a number for ending range:"))
 small_num = min(start_num, end_num)
 big_num = max(start_num, end_num)
 print(f"Range is {small_num, big_num} where {big_num} is involved.")
-user_input = int(input("Enter a number that you want to check for above range:"))
+size = int(input("Enter a number that you want to check for above range:"))
 
 
 def check_range(x, y, z):
@@ -113,10 +113,10 @@ def check_range(x, y, z):
 
 # calling a function and compare with boolean value.
 # if condition is True then below code is execute otherwise else code block is executed
-if check_range(user_input, small_num, big_num):
-    print(f"Number {user_input} is in the given range {small_num, big_num}")
+if check_range(size, small_num, big_num):
+    print(f"Number {size} is in the given range {small_num, big_num}")
 else:
-    print(f"Number {user_input} is not in the given range {small_num, big_num}")
+    print(f"Number {size} is not in the given range {small_num, big_num}")
 
 # Que:9-> Write a python program to multiply all the numbers in a list.
 product_list = [1, 2, 3, 4, "hello", "Python", [2, 1], [2, 1]]
@@ -137,7 +137,7 @@ def list_multiply(element):
 
 print('Multiplication of all list elements is =', list_multiply(product_list))
 # Que:10-> Write a python program to create a function to check whether a given number is even or odd.
-user_input = int(input('Enter number that you want to check Even or Odd:'))
+size = int(input('Enter number that you want to check Even or Odd:'))
 
 
 def evenOdd(num1):
@@ -148,4 +148,4 @@ def evenOdd(num1):
 
 
 # calling a function
-evenOdd(user_input)
+evenOdd(size)

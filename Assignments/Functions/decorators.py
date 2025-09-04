@@ -95,3 +95,29 @@ second = parent_2(2)
 
 print(first())
 print(second())
+
+
+# -----------------
+def check_func(func):
+    def wrapper(*args, **kwargs):
+        print("function name is:", func.__name__)
+        return func(*args, **kwargs)
+
+    return wrapper
+
+
+@check_func
+def add_num_3(num1, num2):
+    print("this is sum:", num2 + num1)
+    return num1 + num2
+
+
+# print(check_func(add_num_3)(5, 4))
+
+result = check_func(add_num_3)(2, 6)
+
+print(result)
+
+print(add_num(6, 9))
+# s = result(2, 9)
+# print(s)

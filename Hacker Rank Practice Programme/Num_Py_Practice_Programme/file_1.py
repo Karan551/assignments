@@ -2,15 +2,26 @@ import numpy as np
 
 #  How to create an array using numpy
 arr = np.array([1, 2, 3, 4, 5])
-# print(arr)
-# b = np.zeros(6, dtype=int)
+print('this is 1-d array:\t', arr)
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+# print('this is 2-d array:\n', arr_2d)
+b = np.zeros(6, dtype=int)
 # print(np.zeros((3, 3), int))
 # print()
 result = np.zeros((3, 3), int)
 b = np.array(result)
 # print(b)
-
+# np.zeros()
 c = np.ones(5)
+# print("this will create an array :\n", np.arange(6))
+arr = np.arange(6)
+new_arr = arr.reshape(3, 2)
+# print("this is new array::\n", new_arr)
+
+# print("\n",np.reshape(arr,shape=(3,2)))
+# print("this is flattened arr::\t", new_arr.flatten())
+arr_2 = np.array([1, 2, 3, 4, 5])
+print("this is numpy poly value::", np.poly(arr_2))
 
 
 # print(c)
@@ -70,8 +81,10 @@ def mergeArrayProblem():
         arr2.append(user_input_2)
 
 
-mergeArrayProblem()
-print(arr1, "\n", arr2)
-
-print()
-print(np.concatenate((arr1, arr2)))
+# print(arr1, "\n", arr2)
+#
+# print()
+# print(np.concatenate((arr1, arr2)))
+if __name__ == '__main__':
+    # mergeArrayProblem()
+    pass
