@@ -16,15 +16,28 @@ def create_new_folder(folder_name="test"):
 
 def create_file(file_name, folder_name=""):
     if folder_name:
-        file = PATH + "/" + folder_name + "/" + file_name
+        file = os.path.join(PATH, folder_name, file_name)
     else:
-        file = PATH + "/" + file_name
 
-    print("this is file name::", file, file_name)
-    with open(file, "x"):
-        pass
+        file = os.path.join(file_name)
 
-    pass
+    if not os.path.exists(file):
+        with open(file, "x"):
+            pass
+        print("file is created successfully.")
+    else:
+        print("file is already existed.")
+
+
+def create_files(file_name: list[str], folder_name=""):
+    def check_list_of_str(file_name):
+        return all(isinstance(item, str) for item in file_name)
+
+    if check_list_of_str(file_name):
+        for file in file_name:
+            create_file(file, folder_name)
+    else:
+        print("list of strings,")
 
 
 def show_dirs():
@@ -76,8 +89,16 @@ show_dirs()
 
 # remove_dirs("Folder_5")
 # show_dirs()
-create_file("file_org.py", "Test")
+# create_file("file_org.py", "Test")
 
+# ganesh.py master.py lst.py tp.py hello.txt cp-gram.txt
+file_name = input("enter file name is space separated :: ").strip().split()
+# lst = "ganesh.py master.py lst.py tp.py hello.txt cp-gram.txt"
+# print(lst.strip().split())
+# # print(file_name.split())
+
+if file_name:
+    create_files(file_name)
 """
 File organiser project banana hai. 12-03-2026(Today)
 
